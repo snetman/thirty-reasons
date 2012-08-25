@@ -1,0 +1,39 @@
+/*
+	30 Reasons :: style.scss
+	----------------------------------------------------------
+	By Adam Snetman
+		
+-------------------------------------------------------------------------------*/
+
+@import "partials/_mixins", "partials/_reset", "partials/_colors", "partials/_base", "partials/_forms", "partials/_modules";
+
+
+
+/* Layout
+-------------------------------------------------- */
+
+#site-header {
+    padding-bottom: 1.4em;
+    .reason-badge {
+        float: left;
+    }
+    nav {
+        float: right;
+    }
+    .main-nav {
+        display: none;
+    }
+    .main-nav.is-visible {
+        display: block;
+    }
+}
+
+#site-footer {
+    clear: both;
+    margin-top: 100px;
+}
+
+
+/* Modules
+-------------------------------------------------- */
+

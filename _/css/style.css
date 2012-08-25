@@ -153,13 +153,13 @@ button {
   white-space: nowrap;
   overflow: hidden; }
 
-/* Colors */
 /* Typography */
 body {
   font-family: "runda", Helvetica, Arial, Helmet, Freesans, sans-serif;
   font-size: 16px;
-  color: #333333;
+  color: #262626;
   background-color: #ededeb;
+  background-color: white;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased; }
 
@@ -213,6 +213,17 @@ blockquote {
 
 strong {
   font-weight: 700; }
+
+a {
+  color: #44a2e1;
+  text-decoration: none;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+  -ms-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  transition: color 0.2s linear; }
+  a:hover {
+    color: #262626; }
 
 /* Forms
 ------------------------- */
@@ -315,7 +326,12 @@ form input[type="submit"]:active {
       width: 1em;
       border-radius: .2em;
       background-color: #44a2e1;
-      text-align: center; }
+      text-align: center;
+      -webkit-transition: background-color 0.2s linear;
+      -moz-transition: background-color 0.2s linear;
+      -ms-transition: background-color 0.2s linear;
+      -o-transition: background-color 0.2s linear;
+      transition: background-color 0.2s linear; }
       .reason-badge .number b:first-child {
         margin-right: .08333333em;
         /* 2px at base */ }
@@ -324,11 +340,16 @@ form input[type="submit"]:active {
   .reason-badge .name {
     font-size: 100%;
     font-weight: 700;
-    color: #333333;
+    color: #262626;
     line-height: 1em;
     margin: 0;
     padding: .125em 0;
-    display: inline-block; }
+    display: inline-block;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -ms-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    transition: color 0.2s linear; }
     .reason-badge .name a {
       text-decoration: none; }
   .reason-badge .artist > ul {
@@ -350,37 +371,54 @@ form input[type="submit"]:active {
         text-decoration: none; }
         .reason-badge .artist > ul li a:hover {
           color: #44a2e1; }
+  .reason-badge .arrow {
+    font-size: 1em;
+    padding-top: .1em;
+    float: left;
+    margin: 0 .5em 0 0;
+    color: #dddddd;
+    position: relative;
+    -webkit-transition: color 0.2s linear;
+    -moz-transition: color 0.2s linear;
+    -ms-transition: color 0.2s linear;
+    -o-transition: color 0.2s linear;
+    transition: color 0.2s linear;
+    -webkit-transition: left 0.2s ease-out;
+    -moz-transition: left 0.2s ease-out;
+    -ms-transition: left 0.2s ease-out;
+    -o-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out; }
 
 .reason-badge.righty .number {
   float: right;
   margin: 0 0 0 .25em; }
 .reason-badge.righty .artist {
   float: right; }
+.reason-badge.righty .arrow {
+  float: right;
+  margin: 0 0 0 .5em; }
 
-.reason-badge.is-bw b {
+.reason-badge.is-pager b {
   background-color: #bbbbbb; }
-.reason-badge.is-bw .name {
+.reason-badge.is-pager .name {
   color: #bbbbbb; }
+.reason-badge.is-pager .artist {
+  display: none; }
 
-/* Layout
--------------------------------------------------- */
-#site-header {
-  padding-bottom: 1.4em; }
-  #site-header .reason-badge {
-    float: left; }
-  #site-header nav {
-    float: right; }
-  #site-header .main-nav {
-    display: none; }
-  #site-header .main-nav.is-visible {
-    display: block; }
+a:hover .reason-badge.is-pager b {
+  background-color: #44a2e1; }
+a:hover .reason-badge.is-pager .name {
+  color: #262626; }
+a:hover .reason-badge.is-pager .arrow {
+  color: #44a2e1;
+  left: -0.5em; }
 
-#site-footer {
-  clear: both;
-  margin-top: 100px; }
+a:hover .reason-badge.is-pager.righty .arrow {
+  left: .5em; }
 
-/* Modules
--------------------------------------------------- */
+@media screen and (min-width: 768px) {
+  .reason-badge.is-pager .artist {
+    display: block; } }
 /* Poster
 ------------------------- */
 .poster {
@@ -391,8 +429,10 @@ form input[type="submit"]:active {
     margin-bottom: 1.4em; }
   .poster .tombstone {
     font-size: .9375em;
-    background-color: white;
+    color: #262626;
+    background-color: #f3f3f3;
     padding: 1.25em 1.5em 1.5em;
+    border: 1px solid #e3e3e3;
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); }
     .poster .tombstone .title {
       font-size: 1em;
@@ -420,9 +460,34 @@ form input[type="submit"]:active {
     box-sizing: border-box;
     border: 2px solid #dddddd;
     border-left-width: 0;
-    border-right-width: 0; }
+    border-right-width: 0;
+    border-bottom-width: 0; }
     .pagination .prev-next > li:first-child {
       border-right-width: 2px; }
   .pagination .prev-next a {
     display: block;
     padding: 1em 0; }
+  .pagination .prev a {
+    padding-left: 1em; }
+  .pagination .next a {
+    padding-right: 1em; }
+
+/* Layout
+-------------------------------------------------- */
+#site-header {
+  padding-bottom: 1.4em; }
+  #site-header .reason-badge {
+    float: left; }
+  #site-header nav {
+    float: right; }
+  #site-header .main-nav {
+    display: none; }
+  #site-header .main-nav.is-visible {
+    display: block; }
+
+#site-footer {
+  clear: both;
+  margin-top: 100px; }
+
+/* Modules
+-------------------------------------------------- */
