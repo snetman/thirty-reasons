@@ -1,0 +1,68 @@
+/* Reason badge
+------------------------- */
+.reason-badge {
+    font-size: 1.5em; /* 24/16 */
+    .number {
+        font-weight: 700;
+        line-height: 1em;
+        padding: 0;
+        margin: 0 .25em 0 0;
+        color: $white;
+        float: left;
+        b {
+            display: inline-block;
+            margin: 0;
+            padding: .125em 0;
+            width: 1em;
+            border-radius: .2em;
+            background-color: $blue;
+            text-align: center;
+            &:first-child {
+                margin-right: .08333333em; /* 2px at base */
+            }
+        }
+    }
+    .artist {
+        float: left;
+    }
+    .name {
+        // Keep font same size as number
+        font-size: 100%;
+        font-weight: 700;
+        color: $text-gray;
+        line-height: 1em;
+        margin: 0;
+        padding: .125em 0;
+        display: inline-block;
+        a {
+            text-decoration: none;
+            }
+    }       
+    .artist > ul {
+        padding: 0;
+        margin: .25em 0 0 0;
+        font-size: .5em; // 12px at base
+        line-height: 1.25em;
+        list-style: none;
+        li {
+            float: left;
+            padding: 0 .5em;
+            margin: 0;
+            border-left: 1px solid $lt-gray;
+            &:first-child { border-left-width: 0; padding-left: 0;}
+            a {
+                color: $md-gray;
+                text-decoration: none;
+                &:hover {color:$blue;}
+            }     
+        }
+    }
+}
+.reason-badge.righty {
+    .number { float: right; margin: 0 0 0 .25em;}
+    .artist {float: right; }
+}
+.reason-badge.is-bw {
+    b { background-color: $text-lt-gray; }
+    .name { color: $text-lt-gray;}
+}

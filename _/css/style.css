@@ -1,0 +1,428 @@
+/*
+	30 Reasons :: style.scss
+	----------------------------------------------------------
+	By Adam Snetman
+		
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+article, aside, figure, footer, header, hgroup, nav, section {
+  display: block; }
+
+/* Responsive images and other embedded objects*/
+img,
+object,
+embed {
+  max-width: 100%; }
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+a {
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  font-size: inherit;
+  font: 100%; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+/* Accessible focus treatment
+	people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active {
+  outline: none; }
+
+small {
+  font-size: 80%; }
+
+strong, th {
+  font-weight: bold; }
+
+td, td img {
+  vertical-align: top; }
+
+/* Make sure sup and sub don't screw with your line-heights
+	gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable,
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer; }
+
+/* make buttons play nice in IE */
+button {
+  width: auto;
+  overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover */
+.ie6 html {
+  filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
+
+/* clear floats */
+.group:before, .group:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+
+.group:after {
+  clear: both; }
+
+.group {
+  zoom: 1; }
+
+/* image replacement */
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/* Colors */
+/* Typography */
+body {
+  font-family: "runda", Helvetica, Arial, Helmet, Freesans, sans-serif;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ededeb;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
+
+h1 {
+  font-size: 1.25em;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 1em; }
+
+h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  margin: 0 0 1.4em 0; }
+
+h3 {
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 140%; }
+
+h4 {
+  font-size: 1em;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 140%; }
+
+p {
+  font-size: 1em;
+  line-height: 140%;
+  margin: 0 0 1.4em 0; }
+
+ul {
+  list-style: circle;
+  padding-left: 1.2em;
+  margin-bottom: 1.3em; }
+
+ol {
+  padding-left: 1.3em;
+  margin-bottom: 1.3em; }
+
+li {
+  margin-bottom: .5em; }
+
+blockquote {
+  padding: 0 .75em;
+  border-left: 3px solid #e5e3e0;
+  font-style: italic; }
+
+strong {
+  font-weight: 700; }
+
+/* Forms
+------------------------- */
+form fieldset {
+  margin: 0 0 20px 0;
+  font-size: 14px; }
+
+form fieldset.form-actions {
+  margin: 0; }
+
+form fieldset label {
+  display: block;
+  margin: 0 0 5px 0;
+  font-weight: bold; }
+
+form fieldset.check label {
+  display: inline;
+  font-weight: normal; }
+
+form fieldset.radio ul li label {
+  display: inline;
+  font-weight: normal; }
+
+form fieldset input.form-text,
+form fieldset textarea {
+  display: block;
+  width: 50%;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+form fieldset input.form-text:focus {
+  border: 1px solid #ccc;
+  background: #fff; }
+
+form fieldset textarea {
+  height: 150px; }
+
+form fieldset select {
+  min-width: 25%;
+  margin: 0; }
+
+form fieldset.radio ul {
+  margin-top: 5px; }
+
+form fieldset.radio ul li {
+  margin: 0 0 5px 0; }
+
+form fieldset.radio ul li:last-child {
+  margin: 0; }
+
+form fieldset p.form-help {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  color: #999; }
+
+form input[type="submit"] {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  background: #eee;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px; }
+
+form input[type="submit"]:hover,
+form input[type="submit"]:focus {
+  border: 1px solid #bbb;
+  background: #e5e5e5; }
+
+form input[type="submit"]:active {
+  border: 1px solid #ccc;
+  background: #eee; }
+
+/* Reason badge
+------------------------- */
+.reason-badge {
+  font-size: 1.5em;
+  /* 24/16 */ }
+  .reason-badge .number {
+    font-weight: 700;
+    line-height: 1em;
+    padding: 0;
+    margin: 0 .25em 0 0;
+    color: white;
+    float: left; }
+    .reason-badge .number b {
+      display: inline-block;
+      margin: 0;
+      padding: .125em 0;
+      width: 1em;
+      border-radius: .2em;
+      background-color: #44a2e1;
+      text-align: center; }
+      .reason-badge .number b:first-child {
+        margin-right: .08333333em;
+        /* 2px at base */ }
+  .reason-badge .artist {
+    float: left; }
+  .reason-badge .name {
+    font-size: 100%;
+    font-weight: 700;
+    color: #333333;
+    line-height: 1em;
+    margin: 0;
+    padding: .125em 0;
+    display: inline-block; }
+    .reason-badge .name a {
+      text-decoration: none; }
+  .reason-badge .artist > ul {
+    padding: 0;
+    margin: .25em 0 0 0;
+    font-size: .5em;
+    line-height: 1.25em;
+    list-style: none; }
+    .reason-badge .artist > ul li {
+      float: left;
+      padding: 0 .5em;
+      margin: 0;
+      border-left: 1px solid #dddddd; }
+      .reason-badge .artist > ul li:first-child {
+        border-left-width: 0;
+        padding-left: 0; }
+      .reason-badge .artist > ul li a {
+        color: #888888;
+        text-decoration: none; }
+        .reason-badge .artist > ul li a:hover {
+          color: #44a2e1; }
+
+.reason-badge.righty .number {
+  float: right;
+  margin: 0 0 0 .25em; }
+.reason-badge.righty .artist {
+  float: right; }
+
+.reason-badge.is-bw b {
+  background-color: #bbbbbb; }
+.reason-badge.is-bw .name {
+  color: #bbbbbb; }
+
+/* Layout
+-------------------------------------------------- */
+#site-header {
+  padding-bottom: 1.4em; }
+  #site-header .reason-badge {
+    float: left; }
+  #site-header nav {
+    float: right; }
+  #site-header .main-nav {
+    display: none; }
+  #site-header .main-nav.is-visible {
+    display: block; }
+
+#site-footer {
+  clear: both;
+  margin-top: 100px; }
+
+/* Modules
+-------------------------------------------------- */
+/* Poster
+------------------------- */
+.poster {
+  margin: 0;
+  padding: 0; }
+  .poster img {
+    display: block;
+    margin-bottom: 1.4em; }
+  .poster .tombstone {
+    font-size: .9375em;
+    background-color: white;
+    padding: 1.25em 1.5em 1.5em;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); }
+    .poster .tombstone .title {
+      font-size: 1em;
+      line-height: 1.4em;
+      margin: 0;
+      font-weight: 700; }
+    .poster .tombstone .title + p {
+      text-indent: 0; }
+    .poster .tombstone p {
+      margin-bottom: 0;
+      text-indent: 1em; }
+
+/* Pagination
+------------------------- */
+.pagination {
+  width: 100%;
+  padding: 2.8em 0; }
+  .pagination .prev-next {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .pagination .prev-next > li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid #dddddd;
+    border-left-width: 0;
+    border-right-width: 0; }
+    .pagination .prev-next > li:first-child {
+      border-right-width: 2px; }
+  .pagination .prev-next a {
+    display: block;
+    padding: 1em 0; }
