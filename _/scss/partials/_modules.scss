@@ -72,13 +72,13 @@ a.btn-blue {
 .reason-number {
     font-size: 1.5em; // 24/16
     font-weight: 700;
-    line-height: 1em; // 24/24
+    line-height: 1.25em; // 24/24
     padding: 0;
     color: $white;
     b {
         display: inline-block;
         margin: 0;
-        padding: .125em 0;
+        padding: 0;
         width: 1em;
         border-radius: .2em;
         background-color: $blue;
@@ -99,9 +99,9 @@ a.btn-blue {
     font-weight: 700;
     color: $black;
     display: block;
-    line-height: 1em; // 24/24
+    line-height: 1.25em; // 24/24
     margin: 0;
-    padding: .125em 0; // 3/24
+    padding: 0; // 3/24
     @include transit(color, .2s, linear);
     a {
         text-decoration: none;
@@ -114,9 +114,9 @@ a.btn-blue {
 
 .reason-arrow {
     font-size: 1.5em; // 24/16
-    line-height: 1em;
+    line-height: 1.25em;
     margin: 0;
-    padding: .125em 0;
+    padding: 0;
     position: relative;
     color: $lt-gray;
     display: block;
@@ -140,6 +140,31 @@ a.btn-blue {
         clear: both;
         font-size: .75em;
         padding-top: 1em;
+    }
+}
+
+/* Reason logo
+------------------------- */
+
+.reason-logo {
+    .reason-number {
+        float: left;
+        margin-right: .25em;
+    }
+    .reason-name {
+        float: left;
+        color: $blue;
+    }
+    .reason-social {
+        clear: both;
+        font-size: .75em;
+        padding-top: 1em;
+    }
+    a {
+      &:hover {
+        .reason-number b {background-color: $black;}
+        .reason-name {color: $black;}
+      }
     }
 }
 
@@ -238,21 +263,97 @@ a.btn-blue {
     a:hover .reason-arrow {left: .25em;}
 }
 
+/* Page title
+-------------------------------------------------- */
+
+.page title {
+  // any special page title styles go here.
+}
+
 
 /* Poster
 ------------------------- */
+
 .poster {
     margin: 0;
     padding: 0;
-    img {
+    .image {
+      position: relative;
+      margin: 0;
+      padding: 0;
+      img {
         display: block;
-        margin: 0;
-        padding: 0;
-    }
-    .caption {
-        margin: 1.4em 0;
+        position: relative;
+        @include transit(all, .15s, ease-out);
+      }
     }
 }
+
+.poster-thumb {
+  @extend .poster;
+  .caption {
+      font-size: .875em; // 14/16
+      font-weight: 500;
+      line-height: 1.14285em; // 16/14
+      padding: .75em 0;
+      border-bottom: 2px solid $lt-gray;
+      height: 2.3em;
+  }
+  a:hover img {
+    left: -1px;
+    top: -2px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  }
+}
+
+.poster-thumb-blank {
+  @extend .poster-thumb;
+  .image {
+    max-width: 280px; // match size of image thumbnails
+  }
+  img {
+    background-color: $vlt-gray;
+    outline: 1px dashed $lt-gray;
+  }
+  .caption {
+    color: $dk-gray;
+  }
+  .reason-number {
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1em;
+    margin-top: -.6em;
+    z-index: 2;
+    b {background-color: $gray;}
+  }
+}
+
+/* Poster grid */
+
+.poster-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0 0 2*$gutter 0;
+    @include grid-col(5);
+  }
+  @media screen and (min-width: 480px) {
+    li {@include grid-col(2.5);}
+  }
+  @media screen and (min-width: 580px) {
+    li {@include grid-col(5/3);}
+  }  
+  @media screen and (min-width: 760px) {
+    li {@include grid-col(5/4);}
+  }
+  @media screen and (min-width: 1024px) {
+    li {@include grid-col(1);}
+  }
+}
+
 
 /* Tombstone
 ------------------------- */

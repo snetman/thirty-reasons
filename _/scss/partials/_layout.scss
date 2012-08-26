@@ -10,10 +10,14 @@
 
 #site-header {
     padding: $gutter .5*$gutter;
-
+    
+    // Reason logo
+    #logo {
+      @include grid-col(5);
+    }
     // Reason badge
     .reason-badge {
-      @include grid-col(5);
+      //@include grid-col(5);
     }
     
     // Main-nav
@@ -26,9 +30,13 @@
       padding-right: 1.5*$gutter;
     }
     @media screen and (min-width: 760px) {
+      // Logo
+      #logo {
+        @include grid-col(3);
+      }
       // Reason badge
       .reason-badge {
-        @include grid-col(3);
+        //@include grid-col(3);
       }      
       // Main nav
       .main-nav {
@@ -68,6 +76,12 @@
       padding-left: 3.5*$gutter;
       padding-right: 3.5*$gutter;
     }
+}
+
+/* Page title */
+
+.page-title {
+  @include grid-col(5);
 }
 
 /* Main col */
