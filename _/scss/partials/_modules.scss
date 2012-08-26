@@ -1,3 +1,56 @@
+/* Links as buttons
+------------------------- */
+
+a.btn {
+    background-color: $vlt-gray;
+    color: $gray;
+    display: inline-block;
+    padding: .25em .75em .35em;
+    border-radius: 5px;
+    font-size: 1em;
+    line-height: 1.25em;
+    font-weight: 500;
+    font-style: normal;
+    @include transit(background-color, .2s, linear);
+    &:hover {
+        background-color: $white;
+        color: $blue;
+    }
+}
+a.btn.dark {
+    color: $dk-gray;
+    background-color: $lt-gray;
+    &:hover {
+        background-color: $white;
+        color: $blue;
+    }
+}
+
+.button-set {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        margin: 0;
+        float: left;
+        margin-right: 1px;
+        }
+    li:last-child {
+        margin-right: 0;
+    }
+    a.btn {
+        border-radius: 0;
+    }   
+    li:first-child a.btn {
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+    li:last-child a.btn {
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}
+
 /* Reason badge
 ------------------------- */
 .reason-badge {
@@ -25,45 +78,30 @@
     }
     .artist {
         float: left;
-    }
-    .name {
-        // Keep font same size as number
-        font-size: 100%;
-        font-weight: 700;
-        color: $black;
-        line-height: 1em;
-        margin: 0;
-        padding: .125em 0;
-        display: inline-block;
-        @include transit(color, .2s, linear);
-        a {
-            text-decoration: none;
-            }
-    }       
-    .artist > ul {
-        padding: 0;
-        margin: .25em 0 0 0;
-        font-size: .5em; // 12px at base
-        line-height: 1.25em;
-        list-style: none;
-        li {
-            float: left;
-            padding: 0 .5em;
+        .name {
+            // Keep font same size as number
+            font-size: 100%;
+            font-weight: 700;
+            color: $black;
+            line-height: 1em;
             margin: 0;
-            border-left: 1px solid $lt-gray;
-            &:first-child { border-left-width: 0; padding-left: 0;}
+            padding: .125em 0;
+            display: inline-block;
+            @include transit(color, .2s, linear);
             a {
-                color: $md-gray;
                 text-decoration: none;
-                &:hover {color:$blue;}
-            }     
+                }
+        }       
+        .social {
+            margin: .75em 0 0 0;
+            font-size: .5em;
         }
     }
     .arrow {
         font-size: 1em;
         padding-top: .1em;
         float: left;
-        margin: 0 .5em 0 0;
+        margin: 0 .25em 0 0;
         color: $lt-gray;
         position: relative;
         @include transit(color, .2s, linear);
@@ -72,95 +110,128 @@
 }
 .reason-badge.righty {
     .number { float: right; margin: 0 0 0 .25em;}
-    .artist {float: right; }
-    .arrow {float: right; margin: 0 0 0 .5em;}
+    .artist {float: right; text-align: right; }
+    .arrow {float: right; margin: 0 0 0 .25em;}
 }
 // if the reason badge is wrapped in a link
 .reason-badge.is-pager {
-    b {background-color: $gray;}
-    .name {color: $gray;}
-    // Don't display the artist's name in pagination at smaller screen widths
-    .artist {display: none;}
+    b {
+        background-color: $gray;
+    }
+    .name {
+        color: $gray;
+        display: none; // don't display the name at small screen widths       
+        @media screen and (min-width: 480px) {
+            display: block;
+            font-size: .5833333em; // 14px / 24px
+            line-height: 1em;;
+            padding: .65em 0;
+        }
+        @media screen and (min-width: 760px) {
+            font-size: 100%;
+            line-height: 1em;
+            padding: .125em 0;
+        }
+    }
 }
+        
 a:hover .reason-badge.is-pager {
     b {background-color: $blue;}
     .name {color: $black;}
-    .arrow {color: $blue; left: -.5em;}
+    .arrow {color: $blue; left: -.25em;}
 }
 a:hover .reason-badge.is-pager.righty {
-    .arrow {left: .5em;}
+    .arrow {left: .25em;}
 }
 
-@media screen and (min-width: 768px) {
-    .reason-badge.is-pager {
-        .artist {display: block;}
-    }
-
-}
 
 /* Poster
 ------------------------- */
 .poster {
     margin: 0;
     padding: 0;
-    // The poster image
     img {
         display: block;
-        margin-bottom: 1.4em;
-    }
-    // The tombstone
-    .tombstone {
-        font-size: .9375em; // 15/16
-        color: $black;
-        background-color: #f3f3f3;
-        padding: 1.25em 1.5em 1.5em;
-        border: 1px solid #e3e3e3;
-        box-shadow: 0 3px 9px rgba(0,0,0,.2);
-        .title {
-            font-size: 1em;
-            line-height: 1.4em;
-            margin: 0;
-            font-weight: 700;
-        }
-        .title + p {
-            text-indent: 0;
-        }
-        p {
-            margin-bottom: 0;
-            text-indent: 1em;
-        }   
-    }    
-}
-
-/* Pagination
-------------------------- */
-
-.pagination {
-    width: 100%;
-    padding: 2.8em 0;
-    .prev-next {
-        list-style: none;
         margin: 0;
         padding: 0;
     }
-    .prev-next > li {
-        float: left;
-        width: 50%;
-        box-sizing: border-box;
-        border: 2px solid $lt-gray;
-        border-left-width: 0;
-        border-right-width: 0;
-        border-bottom-width: 0;
-        &:first-child {border-right-width: 2px;}
-    }
-    .prev-next a {
-        display: block;
-        padding: 1em 0;
-    }
-    .prev a {
-        padding-left: 1em;
-    }
-    .next a {
-        padding-right: 1em;
+    .caption {
+        margin: 1.4em 0;
     }
 }
+
+/* Tombstone
+------------------------- */
+.tombstone {
+    font-size: .875em; // 14/16
+    background-color: $vlt-gray;
+    padding: 1.25em 1.5em 1.5em;
+    border: 1px solid $vlt-gray;
+    box-shadow: 0 3px 12px rgba(0,0,0,.25);
+    .title {
+      font-size: 1em; // 14/14
+      font-weight: 700;
+      line-height: 1.285em; // 18/14
+      margin-bottom: .65em;
+      color: $black;
+    }
+    .title + p {
+        text-indent: 0;
+    }
+    p {
+        font-size: 1em; // 14/14
+        text-indent: 1.5em; // 18/14
+        line-height: 1.285em;
+        margin-bottom: 2.5714em; // 36/14
+        color: $vdk-gray;
+    }
+    p + p {
+        margin-top: -2.5714em;
+    }
+    .share {
+        font-size: .85714em; // 12/14
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }           
+}    
+
+
+/* Prev / Next links
+------------------------- */
+
+.prev-next {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.prev-next > li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid $lt-gray;
+    border-left-width: 0;
+    border-right-width: 0;
+    // border-bottom-width: 0;
+    &:first-child {border-right-width: 2px;}
+}
+.prev > a, .next > a {
+    display: block;
+    padding: 1em .25em;
+    background-color: $white; // $vlt-gray;
+    @include transit(background-color, .2s, linear);
+    &:hover {background-color: $white;}        
+}
+
+
+
+
+
+
+
+
+

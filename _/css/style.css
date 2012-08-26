@@ -161,7 +161,9 @@ body {
   background-color: #ededeb;
   background-color: white;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0; }
 
 h1 {
   font-size: 1.25em;
@@ -307,6 +309,53 @@ form input[type="submit"]:active {
   border: 1px solid #ccc;
   background: #eee; }
 
+/* Links as buttons
+------------------------- */
+a.btn {
+  background-color: #f4f4f4;
+  color: #aaaaaa;
+  display: inline-block;
+  padding: .25em .75em .35em;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 1.25em;
+  font-weight: 500;
+  font-style: normal;
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear; }
+  a.btn:hover {
+    background-color: white;
+    color: #44a2e1; }
+
+a.btn.dark {
+  color: #888888;
+  background-color: #dddddd; }
+  a.btn.dark:hover {
+    background-color: white;
+    color: #44a2e1; }
+
+.button-set {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .button-set li {
+    margin: 0;
+    float: left;
+    margin-right: 1px; }
+  .button-set li:last-child {
+    margin-right: 0; }
+  .button-set a.btn {
+    border-radius: 0; }
+  .button-set li:first-child a.btn {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px; }
+  .button-set li:last-child a.btn {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px; }
+
 /* Reason badge
 ------------------------- */
 .reason-badge {
@@ -337,45 +386,29 @@ form input[type="submit"]:active {
         /* 2px at base */ }
   .reason-badge .artist {
     float: left; }
-  .reason-badge .name {
-    font-size: 100%;
-    font-weight: 700;
-    color: #262626;
-    line-height: 1em;
-    margin: 0;
-    padding: .125em 0;
-    display: inline-block;
-    -webkit-transition: color 0.2s linear;
-    -moz-transition: color 0.2s linear;
-    -ms-transition: color 0.2s linear;
-    -o-transition: color 0.2s linear;
-    transition: color 0.2s linear; }
-    .reason-badge .name a {
-      text-decoration: none; }
-  .reason-badge .artist > ul {
-    padding: 0;
-    margin: .25em 0 0 0;
-    font-size: .5em;
-    line-height: 1.25em;
-    list-style: none; }
-    .reason-badge .artist > ul li {
-      float: left;
-      padding: 0 .5em;
+    .reason-badge .artist .name {
+      font-size: 100%;
+      font-weight: 700;
+      color: #262626;
+      line-height: 1em;
       margin: 0;
-      border-left: 1px solid #dddddd; }
-      .reason-badge .artist > ul li:first-child {
-        border-left-width: 0;
-        padding-left: 0; }
-      .reason-badge .artist > ul li a {
-        color: #888888;
+      padding: .125em 0;
+      display: inline-block;
+      -webkit-transition: color 0.2s linear;
+      -moz-transition: color 0.2s linear;
+      -ms-transition: color 0.2s linear;
+      -o-transition: color 0.2s linear;
+      transition: color 0.2s linear; }
+      .reason-badge .artist .name a {
         text-decoration: none; }
-        .reason-badge .artist > ul li a:hover {
-          color: #44a2e1; }
+    .reason-badge .artist .social {
+      margin: .75em 0 0 0;
+      font-size: .5em; }
   .reason-badge .arrow {
     font-size: 1em;
     padding-top: .1em;
     float: left;
-    margin: 0 .5em 0 0;
+    margin: 0 .25em 0 0;
     color: #dddddd;
     position: relative;
     -webkit-transition: color 0.2s linear;
@@ -393,17 +426,28 @@ form input[type="submit"]:active {
   float: right;
   margin: 0 0 0 .25em; }
 .reason-badge.righty .artist {
-  float: right; }
+  float: right;
+  text-align: right; }
 .reason-badge.righty .arrow {
   float: right;
-  margin: 0 0 0 .5em; }
+  margin: 0 0 0 .25em; }
 
 .reason-badge.is-pager b {
-  background-color: #bbbbbb; }
+  background-color: #aaaaaa; }
 .reason-badge.is-pager .name {
-  color: #bbbbbb; }
-.reason-badge.is-pager .artist {
+  color: #aaaaaa;
   display: none; }
+  @media screen and (min-width: 480px) {
+    .reason-badge.is-pager .name {
+      display: block;
+      font-size: .5833333em;
+      line-height: 1em;
+      padding: .65em 0; } }
+  @media screen and (min-width: 760px) {
+    .reason-badge.is-pager .name {
+      font-size: 100%;
+      line-height: 1em;
+      padding: .125em 0; } }
 
 a:hover .reason-badge.is-pager b {
   background-color: #44a2e1; }
@@ -411,14 +455,11 @@ a:hover .reason-badge.is-pager .name {
   color: #262626; }
 a:hover .reason-badge.is-pager .arrow {
   color: #44a2e1;
-  left: -0.5em; }
+  left: -0.25em; }
 
 a:hover .reason-badge.is-pager.righty .arrow {
-  left: .5em; }
+  left: .25em; }
 
-@media screen and (min-width: 768px) {
-  .reason-badge.is-pager .artist {
-    display: block; } }
 /* Poster
 ------------------------- */
 .poster {
@@ -426,68 +467,150 @@ a:hover .reason-badge.is-pager.righty .arrow {
   padding: 0; }
   .poster img {
     display: block;
-    margin-bottom: 1.4em; }
-  .poster .tombstone {
-    font-size: .9375em;
-    color: #262626;
-    background-color: #f3f3f3;
-    padding: 1.25em 1.5em 1.5em;
-    border: 1px solid #e3e3e3;
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); }
-    .poster .tombstone .title {
-      font-size: 1em;
-      line-height: 1.4em;
-      margin: 0;
-      font-weight: 700; }
-    .poster .tombstone .title + p {
-      text-indent: 0; }
-    .poster .tombstone p {
-      margin-bottom: 0;
-      text-indent: 1em; }
+    margin: 0;
+    padding: 0; }
+  .poster .caption {
+    margin: 1.4em 0; }
+
+/* Tombstone
+------------------------- */
+.tombstone {
+  font-size: .875em;
+  background-color: #f4f4f4;
+  padding: 1.25em 1.5em 1.5em;
+  border: 1px solid #f4f4f4;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25); }
+  .tombstone .title {
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.285em;
+    margin-bottom: .65em;
+    color: #262626; }
+  .tombstone .title + p {
+    text-indent: 0; }
+  .tombstone p {
+    font-size: 1em;
+    text-indent: 1.5em;
+    line-height: 1.285em;
+    margin-bottom: 2.5714em;
+    color: #555555; }
+  .tombstone p + p {
+    margin-top: -2.571em; }
+  .tombstone .share {
+    font-size: .85714em;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .tombstone .share li {
+      display: inline-block;
+      margin-bottom: 0; }
+
+/* Prev / Next links
+------------------------- */
+.prev-next {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.prev-next > li {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #dddddd;
+  border-left-width: 0;
+  border-right-width: 0; }
+  .prev-next > li:first-child {
+    border-right-width: 2px; }
+
+.prev > a, .next > a {
+  display: block;
+  padding: 1em .25em;
+  background-color: white;
+  -webkit-transition: background-color 0.2s linear;
+  -moz-transition: background-color 0.2s linear;
+  -ms-transition: background-color 0.2s linear;
+  -o-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear; }
+  .prev > a:hover, .next > a:hover {
+    background-color: white; }
+
+.column {
+  box-sizing: border-box;
+  float: left; }
+
+/* Layout
+-------------------------------------------------- */
+#site-header, .content, #site-footer {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 1280px;
+  outline: 1px dotted #f4f4f4; }
+
+/* Site header
+------------------------- */
+#site-header {
+  padding: 1.4em 2.8em; }
+
+/* Content
+------------------------- */
+.content {
+  padding: 1.4em 2.8em; }
+
+.main {
+  box-sizing: border-box;
+  padding-bottom: 1.4em; }
+  @media screen and (min-width: 760px) {
+    .main {
+      width: 60%;
+      padding-right: .7em;
+      padding-bottom: 0;
+      float: left; } }
+  @media screen and (min-width: 1200px) {
+    .main {
+      width: 50%;
+      padding-right: 1.4em; } }
+
+.sidebar {
+  box-sizing: border-box; }
+  @media screen and (min-width: 760px) {
+    .sidebar {
+      width: 40%;
+      padding-left: .7em;
+      float: left; } }
+  @media screen and (min-width: 1200px) {
+    .sidebar {
+      padding-left: 1.4em;
+      padding-right: 0;
+      width: 50%; } }
 
 /* Pagination
 ------------------------- */
 .pagination {
-  width: 100%;
-  padding: 2.8em 0; }
-  .pagination .prev-next {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-  .pagination .prev-next > li {
-    float: left;
-    width: 50%;
-    box-sizing: border-box;
-    border: 2px solid #dddddd;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-bottom-width: 0; }
-    .pagination .prev-next > li:first-child {
-      border-right-width: 2px; }
-  .pagination .prev-next a {
-    display: block;
-    padding: 1em 0; }
-  .pagination .prev a {
-    padding-left: 1em; }
-  .pagination .next a {
-    padding-right: 1em; }
-
-/* Layout
--------------------------------------------------- */
-#site-header {
-  padding-bottom: 1.4em; }
-  #site-header .reason-badge {
-    float: left; }
-  #site-header nav {
-    float: right; }
-  #site-header .main-nav {
-    display: none; }
-  #site-header .main-nav.is-visible {
-    display: block; }
-
-#site-footer {
   clear: both;
-  margin-top: 100px; }
+  box-sizing: border-box;
+  padding-top: 2.8em; }
+  @media screen and (min-width: 1200px) {
+    .pagination {
+      clear: none;
+      float: left;
+      padding-left: 1.4em;
+      padding-top: 0;
+      width: 25%;
+      width: 50%;
+      padding-left: 1.4em;
+      padding-right: 0;
+      padding-top: 2.8em; } }
 
-/* Modules
--------------------------------------------------- */
+/* Site footer
+------------------------- */
+#site-footer {
+  padding: 1.4em 2.8em; }
+
+#site-header .reason-badge {
+  float: left; }
+#site-header nav {
+  float: right; }
+#site-header .main-nav {
+  display: none; }
+#site-header .main-nav.is-visible {
+  display: block; }

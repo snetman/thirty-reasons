@@ -51,9 +51,9 @@
     </div>
     <div class="artist">
       <h1 class="name">John Klotnia</h1>
-      <ul>
-        <li><a href="#">somewhere.org</a></li>
-        <li><a href="#">@klotnia</a></li>
+      <ul class="social button-set">
+        <li><a class="btn" href="#">somewhere.org</a></li>
+        <li><a class="btn" href="#">@klotnia</a></li>
       </ul>
     </div>
   </div>
@@ -66,56 +66,62 @@
   </nav>
 </header>
 
-<article>
+<section class="content group">
 
-  <figure class="poster">
-    <img src="_/img/adam-snetman.jpg" />
-    <figcaption class="tombstone">
+  <section class="main">
+    <figure class="poster">
+      <img src="_/img/as-lg.jpg" />
+    </figure>  
+  </section><!-- /main -->
+
+  <aside class="sidebar">
+    <div class="tombstone">
       <h2 class="title">Lorem ipsum dolor sit amet consecutat</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
       <ul class="share">
-        <li><a href="#"><i class="ss-icon ss-social">&#xF611;</i> Share this</a></li>
+        <li><a href="#" class="btn dark"><i class="ss-icon ss-social">&#xF611;</i> Share this</a></li>
       </ul>
-    </figcaption>
-  </figure>
+    </div><!-- /tombstone -->
+  </aside>
 
-</article>
+  <section class="pagination">
+    <nav>
+      <ul class="prev-next group">
+        <li class="prev">
+          <a href="#" class="group">
+            <div class="reason-badge is-pager">
+              <div class="arrow ss-icon">previous</div>
+              <div class="number">
+                <b>0</b><b>4</b>
+              </div>
+              <div class="artist">
+                <span class="name">Chris Thomas</span>
+              </div>
+            </div>
+          </a>
+        </li><!-- /prev -->
+        <li class="next">
+          <a href="#" class="group">
+            <div class="reason-badge is-pager righty">
+              <div class="arrow ss-icon">next</div>
+              <div class="number">
+                <b>0</b><b>6</b>
+              </div>
+              <div class="artist">
+                <span class="name">Adam Snetman</span>
+              </div>
+            </div>
+          </a>               
+        </li><!-- /next -->
+      </ul> 
+    </nav>
+  </section><!-- /pagination -->
+  
+</section><!-- /content -->
 
-<section class="pagination">
-  <nav>
-    <ul class="prev-next">
-      <li class="prev">
-        <a href="#" class="group">
-          <div class="reason-badge is-pager">
-            <div class="arrow ss-icon">previous</div>
-            <div class="number">
-              <b>0</b><b>4</b>
-            </div>
-            <div class="artist">
-              <span class="name">Chris Thomas</span>
-            </div>
-          </div>
-        </a>
-      </li><!-- /prev -->
-      <li class="next">
-        <a href="#" class="group">
-          <div class="reason-badge is-pager righty">
-            <div class="arrow ss-icon">next</div>
-            <div class="number">
-              <b>0</b><b>6</b>
-            </div>
-            <div class="artist">
-              <span class="name">Adam Snetman</span>
-            </div>
-          </div>
-        </a>               
-      </li><!-- /next -->
-    </ul> 
-  </nav>
-</section><!-- /pagination -->
 
-<footer id="site-footer">
+<footer id="site-footer" class="group">
   <ul class="social">
     <li><a href="#"><i class="ss-icon ss-social">&#xF611;</i> Follow 30 Reasons</a></li>
     <li><a href="#"><i class="ss-icon ss-social">&#x1F44D;</i> Like 30 Reasons</a></li>
