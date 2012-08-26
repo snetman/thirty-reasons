@@ -309,7 +309,7 @@ a.btn-blue {
     width: 50%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    @include box-size;
     border: 2px solid $lt-gray;
     border-left-width: 0;
     border-right-width: 0;
@@ -333,6 +333,18 @@ a.btn-blue {
 }
 
 
+/* Main navigation
+-------------------------------------------------- */
+
+.main-nav {
+    display: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    > li {
+        margin: 0;
+    }
+}
 
 
 

@@ -1,41 +1,35 @@
-// Grid system
+/* Grid system
+-------------------------------------------------- */
 
-.row {
-  max-width: 960px;
-  margin: 0 auto;
-  // clearfix
-  zoom: 1;
-  &:before {content: "\0020"; display: block; height: 0; overflow: hidden;}
-  &:after {content: "\0020"; display: block; height: 0; overflow: hidden; clear: both;}
-}
+/* Variables
+------------------------- */
 
-// Simple 5-column grid using border-box
+$columns: 5;
+$gutter: 22px;
 
-$grid-width: 20%;
-$gutter-width: .75em;
+/* Functions
+-------------------------------------------------- */
 
 @function tr-grid-width($n) {
-  @return $n * $grid-width;
+  @return $n * (100% / $columns);
 }
 
-@mixin col($num) {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 $gutter-width;
-  float: left;
-  width: tr-grid-width($num);
-  //outline: 1px dotted $gray;
+/* Rows
+------------------------- */
+
+@mixin grid-row {
+  @extend .group;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-@media screen and (min-width: 320px) {
+/* Cols
+------------------------- */
 
-}
-
-@media screen and (min-width: 480px) {
-}
-
-@media screen and (min-width: 760px) {
-}
-
-@media screen and (min-width: 1024px) {
+@mixin grid-col ($cols) {
+    @include box-size;
+    float: left;
+    width: tr-grid-width($cols);
+    padding: 0 .5*$gutter;
 }

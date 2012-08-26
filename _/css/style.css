@@ -4,14 +4,14 @@
 	By Adam Snetman
 		
 -------------------------------------------------------------------------------*/
-.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next {
+.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next, .wrap {
   zoom: 1; }
-  .group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+  .group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .wrap:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after, .wrap:after {
     content: "\0020";
     display: block;
     height: 0;
     overflow: hidden; }
-  .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+  .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after, .wrap:after {
     clear: both; }
 
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
@@ -145,16 +145,16 @@ button {
   filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
 
 /* clear floats */
-.group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+.group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .wrap:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after, .wrap:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden; }
 
-.group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+.group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after, .wrap:after {
   clear: both; }
 
-.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next {
+.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next, .wrap {
   zoom: 1; }
 
 /* image replacement */
@@ -175,10 +175,11 @@ body {
   padding: 0; }
 
 h1 {
-  font-size: 1.25em;
+  font-size: 1.5em;
   font-weight: 700;
   line-height: 120%;
-  margin-bottom: 1em; }
+  padding: 0;
+  margin: 0 0 1em 0; }
 
 h2 {
   font-family: Helvetica, Arial, sans-serif;
@@ -186,38 +187,51 @@ h2 {
   font-weight: 700;
   font-style: normal;
   line-height: 120%;
+  padding: 0;
   margin: 0 0 1.4em 0; }
 
 h3 {
   font-size: 1em;
   font-weight: 700;
   font-style: normal;
-  line-height: 140%; }
+  line-height: 140%;
+  padding: 0;
+  margin: 0; }
 
 h4 {
   font-size: 1em;
   font-weight: 400;
   font-style: italic;
-  line-height: 140%; }
+  line-height: 140%;
+  padding: 0;
+  margin: 0; }
 
 p {
   font-size: 1em;
   line-height: 140%;
+  padding: 0;
   margin: 0 0 1.4em 0; }
 
 ul {
   list-style: circle;
+  padding: 0;
+  margin: 0;
   padding-left: 1.2em;
   margin-bottom: 1.3em; }
 
 ol {
+  padding: 0;
+  margin: 0;
   padding-left: 1.3em;
   margin-bottom: 1.3em; }
 
 li {
+  padding: 0;
+  margin: 0;
   margin-bottom: .5em; }
 
 blockquote {
+  margin: 0;
   padding: 0 .75em;
   border-left: 3px solid #e5e3e0;
   font-style: italic; }
@@ -318,6 +332,16 @@ form input[type="submit"]:active {
   border: 1px solid #ccc;
   background: #eee; }
 
+/* Grid system
+-------------------------------------------------- */
+/* Variables
+------------------------- */
+/* Functions
+-------------------------------------------------- */
+/* Rows
+------------------------- */
+/* Cols
+------------------------- */
 /* Links as buttons
 ------------------------- */
 a.btn, a.btn-dark, a.btn-blue {
@@ -593,6 +617,8 @@ a.btn-blue {
   width: 50%;
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 2px solid #dddddd;
   border-left-width: 0;
@@ -609,83 +635,182 @@ a.btn-blue {
   font-size: .75em;
   color: #888888; }
 
-.column {
-  box-sizing: border-box;
-  float: left; }
-
-/* Layout
+/* Main navigation
 -------------------------------------------------- */
-#site-header, .content, #site-footer {
-  box-sizing: border-box;
-  margin: 0 auto;
+.main-nav {
+  display: none;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  .main-nav > li {
+    margin: 0; }
+
+/* Wrapper
+-------------------------------------------------- */
+.wrap {
+  width: 100%;
   max-width: 1280px;
-  outline: 1px dotted #f4f4f4; }
+  margin: 0 auto; }
 
 /* Site header
-------------------------- */
+-------------------------------------------------- */
 #site-header {
-  padding: 1.4em 2.8em; }
+  padding: 22px 11px; }
+  #site-header .reason-badge {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 0 11px; }
+  #site-header .main-nav {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 0 11px; }
+  @media screen and (min-width: 580px) {
+    #site-header {
+      padding-left: 33px;
+      padding-right: 33px; } }
+  @media screen and (min-width: 760px) {
+    #site-header .reason-badge {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 60%;
+      padding: 0 11px; }
+    #site-header .main-nav {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 40%;
+      padding: 0 11px; } }
+  @media screen and (min-width: 1024px) {
+    #site-header {
+      padding-left: 55px;
+      padding-right: 55px; } }
+  @media screen and (min-width: 1200px) {
+    #site-header {
+      padding-left: 77px;
+      padding-right: 77px; } }
 
 /* Content
 ------------------------- */
 .content {
-  padding: 1.4em 2.8em; }
+  padding: 22px 11px; }
+  @media screen and (min-width: 580px) {
+    .content {
+      padding-left: 33px;
+      padding-right: 33px; } }
+  @media screen and (min-width: 1024px) {
+    .content {
+      padding-left: 55px;
+      padding-right: 55px; } }
+  @media screen and (min-width: 1200px) {
+    .content {
+      padding-left: 77px;
+      padding-right: 77px; } }
 
+/* Main col */
 .main {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  float: left;
+  width: 100%;
+  padding: 0 11px;
   padding-bottom: 1.4em; }
   @media screen and (min-width: 760px) {
     .main {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
       width: 60%;
-      padding-right: .7em;
-      padding-bottom: 0;
-      float: left; } }
+      padding: 0 11px; } }
   @media screen and (min-width: 1200px) {
     .main {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
       width: 50%;
-      padding-right: 1.4em; } }
+      padding: 0 11px; } }
 
+/* Sidebar */
 .sidebar {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  padding: 0 11px; }
   @media screen and (min-width: 760px) {
     .sidebar {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
       width: 40%;
-      padding-left: .7em;
-      float: left; } }
+      padding: 0 11px; } }
   @media screen and (min-width: 1200px) {
     .sidebar {
-      padding-left: 1.4em;
-      padding-right: 0;
-      width: 50%; } }
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 50%;
+      padding: 0 11px; } }
 
-/* Pagination
-------------------------- */
+/* Pagination */
 .pagination {
-  clear: both;
+  margin-top: 2.8em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding-top: 2.8em; }
+  float: left;
+  width: 100%;
+  padding: 0 11px; }
   @media screen and (min-width: 1200px) {
     .pagination {
-      clear: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
       float: left;
-      padding-left: 1.4em;
-      padding-top: 0;
-      width: 25%;
       width: 50%;
-      padding-left: 1.4em;
-      padding-right: 0;
-      padding-top: 2.8em; } }
+      padding: 0 11px; } }
 
 /* Site footer
-------------------------- */
+-------------------------------------------------- */
 #site-footer {
-  padding: 1.4em 2.8em; }
-
-#site-header .reason-badge {
-  float: left; }
-#site-header nav {
-  float: right; }
-#site-header .main-nav {
-  display: none; }
-#site-header .main-nav.is-visible {
-  display: block; }
+  padding: 22px 11px 44px; }
+  #site-footer .social {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 0 11px; }
+  #site-footer .copyright {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding: 0 11px; }
+  @media screen and (min-width: 580px) {
+    #site-footer {
+      padding-left: 33px;
+      padding-right: 33px; } }
+  @media screen and (min-width: 1024px) {
+    #site-footer {
+      padding-left: 55px;
+      padding-right: 55px; } }
+  @media screen and (min-width: 1200px) {
+    #site-footer {
+      padding-left: 77px;
+      padding-right: 77px; } }

@@ -1,0 +1,137 @@
+/* Wrapper
+-------------------------------------------------- */
+
+.wrap {
+  @include grid-row;
+}
+
+/* Site header
+-------------------------------------------------- */
+
+#site-header {
+    padding: $gutter .5*$gutter;
+
+    // Reason badge
+    .reason-badge {
+      @include grid-col(5);
+    }
+    
+    // Main-nav
+    .main-nav {
+      @include grid-col(5);
+    }
+    
+    @media screen and (min-width: 580px) {
+      padding-left: 1.5*$gutter;
+      padding-right: 1.5*$gutter;
+    }
+    @media screen and (min-width: 760px) {
+      // Reason badge
+      .reason-badge {
+        @include grid-col(3);
+      }      
+      // Main nav
+      .main-nav {
+        @include grid-col(2);
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      padding-left: 2.5*$gutter;
+      padding-right: 2.5*$gutter;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 3.5*$gutter;
+      padding-right: 3.5*$gutter;
+    }
+   
+}
+
+
+/* Content
+------------------------- */
+
+.content {
+    padding: $gutter .5*$gutter;
+
+    @media screen and (min-width: 580px) {
+      padding-left: 1.5*$gutter;
+      padding-right: 1.5*$gutter;
+    }
+    @media screen and (min-width: 760px) {
+      // Same as above padding
+    }
+    @media screen and (min-width: 1024px) {
+      padding-left: 2.5*$gutter;
+      padding-right: 2.5*$gutter;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 3.5*$gutter;
+      padding-right: 3.5*$gutter;
+    }
+}
+
+/* Main col */
+
+.main {
+    @include grid-col(5);
+    padding-bottom: 1.4em; // needs this padding because it stacks directly on top of the sidebar in the smaller layouts
+    @media screen and (min-width: 760px) {
+      @include grid-col(3);
+    }
+     @media screen and (min-width: 1200px) {
+       @include grid-col(2.5);
+    }  
+}
+
+/* Sidebar */
+
+.sidebar {
+    @include grid-col(5);
+    @media screen and (min-width: 760px) {
+      @include grid-col(2);
+    }
+     @media screen and (min-width: 1200px) {
+       @include grid-col(2.5);
+    }
+}
+
+/* Pagination */
+
+.pagination {
+    margin-top: 2.8em; // keeps this away from the main and sidebar columns above
+    @include grid-col(5);
+    
+    @media screen and (min-width: 1200px) {
+      @include grid-col(2.5);
+    }
+}
+
+/* Site footer
+-------------------------------------------------- */
+
+#site-footer {
+    padding: $gutter .5*$gutter 2*$gutter;    
+    // The social buttons
+    .social {
+      @include grid-col(5);
+    }
+    // The copyright
+    .copyright {
+      @include grid-col(5);
+    }
+    @media screen and (min-width: 580px) {
+      padding-left: 1.5*$gutter;
+      padding-right: 1.5*$gutter;
+    }
+    @media screen and (min-width: 760px) {
+      // padding: $gutter;
+    }
+    @media screen and (min-width: 1024px) {
+      padding-left: 2.5*$gutter;
+      padding-right: 2.5*$gutter;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 3.5*$gutter;
+      padding-right: 3.5*$gutter;
+    }
+}
