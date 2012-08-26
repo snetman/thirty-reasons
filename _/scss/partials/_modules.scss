@@ -21,16 +21,23 @@ a.btn {
         color: $blue;
     }
 }
-a.btn.dark {
+a.btn-dark {
+    @extend a.btn;
     color: $dk-gray;
     background-color: $lt-gray;
+}
+a.btn-blue {
+    @extend a.btn;
+    color: $white;
+    background-color: $blue;
     &:hover {
-        background-color: $white;
-        color: $blue;
+        background-color: $vdk-gray;
+        color: $white;
     }
 }
 
 .button-set {
+    @extend .group;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -310,6 +317,20 @@ a.btn.dark {
 }
 
 
+/* Footer
+-------------------------------------------------- */
+
+#site-footer {
+    .social {
+        font-size: .75em;
+        margin-bottom: 1em;
+        }
+    .copyright {
+        font-size: .75em;
+        color: $dk-gray;
+    }    
+    
+}
 
 
 

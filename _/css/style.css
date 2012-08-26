@@ -4,14 +4,14 @@
 	By Adam Snetman
 		
 -------------------------------------------------------------------------------*/
-.group, .reason-button a, .reason-button-righty a, .prev-next {
+.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next {
   zoom: 1; }
-  .group:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+  .group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
     content: "\0020";
     display: block;
     height: 0;
     overflow: hidden; }
-  .group:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+  .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
     clear: both; }
 
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
@@ -145,16 +145,16 @@ button {
   filter: expression(document.execCommand("BackgroundImageCache", false, true)); }
 
 /* clear floats */
-.group:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+.group:before, .button-set:before, .reason-button a:before, .reason-button-righty a:before, .prev-next:before, .group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
   content: "\0020";
   display: block;
   height: 0;
   overflow: hidden; }
 
-.group:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
+.group:after, .button-set:after, .reason-button a:after, .reason-button-righty a:after, .prev-next:after {
   clear: both; }
 
-.group, .reason-button a, .reason-button-righty a, .prev-next {
+.group, .button-set, .reason-button a, .reason-button-righty a, .prev-next {
   zoom: 1; }
 
 /* image replacement */
@@ -168,7 +168,6 @@ body {
   font-family: "runda", Helvetica, Arial, Helmet, Freesans, sans-serif;
   font-size: 16px;
   color: #262626;
-  background-color: #ededeb;
   background-color: white;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -321,7 +320,7 @@ form input[type="submit"]:active {
 
 /* Links as buttons
 ------------------------- */
-a.btn {
+a.btn, a.btn-dark, a.btn-blue {
   background-color: #f4f4f4;
   color: #aaaaaa;
   display: inline-block;
@@ -336,19 +335,23 @@ a.btn {
   -ms-transition: background-color 0.2s linear;
   -o-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear; }
-  a.btn .ss-icon {
+  a.btn .ss-icon, a.btn-dark .ss-icon, a.btn-blue .ss-icon {
     position: relative;
     top: .15em; }
-  a.btn:hover {
+  a.btn:hover, a.btn-dark:hover, a.btn-blue:hover {
     background-color: white;
     color: #44a2e1; }
 
-a.btn.dark {
+a.btn-dark {
   color: #888888;
   background-color: #dddddd; }
-  a.btn.dark:hover {
-    background-color: white;
-    color: #44a2e1; }
+
+a.btn-blue {
+  color: white;
+  background-color: #44a2e1; }
+  a.btn-blue:hover {
+    background-color: #555555;
+    color: white; }
 
 .button-set {
   margin: 0;
@@ -360,12 +363,12 @@ a.btn.dark {
     margin-right: 1px; }
   .button-set li:last-child {
     margin-right: 0; }
-  .button-set a.btn {
+  .button-set a.btn, .button-set a.btn-dark, .button-set a.btn-blue {
     border-radius: 0; }
-  .button-set li:first-child a.btn {
+  .button-set li:first-child a.btn, .button-set li:first-child a.btn-dark, .button-set li:first-child a.btn-blue {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px; }
-  .button-set li:last-child a.btn {
+  .button-set li:last-child a.btn, .button-set li:last-child a.btn-dark, .button-set li:last-child a.btn-blue {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px; }
 
@@ -596,6 +599,15 @@ a.btn.dark {
   border-right-width: 0; }
   .prev-next > li:first-child {
     border-right-width: 2px; }
+
+/* Footer
+-------------------------------------------------- */
+#site-footer .social {
+  font-size: .75em;
+  margin-bottom: 1em; }
+#site-footer .copyright {
+  font-size: .75em;
+  color: #888888; }
 
 .column {
   box-sizing: border-box;
