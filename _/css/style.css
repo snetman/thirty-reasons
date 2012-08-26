@@ -491,6 +491,25 @@ form input[type="submit"]:active {
       width: 50%;
       padding: 0 11px; } }
 
+/* Sign-up form
+-------------------------------------------------- */
+#sign-up {
+  background-color: #44a2e1;
+  padding: 22px 11px;
+  margin-bottom: 22px; }
+  @media screen and (min-width: 580px) {
+    #sign-up {
+      padding-left: 33px;
+      padding-right: 33px; } }
+  @media screen and (min-width: 1024px) {
+    #sign-up {
+      padding-left: 55px;
+      padding-right: 55px; } }
+  @media screen and (min-width: 1200px) {
+    #sign-up {
+      padding-left: 77px;
+      padding-right: 77px; } }
+
 /* Site footer
 -------------------------------------------------- */
 #site-footer {

@@ -120,6 +120,30 @@
     }
 }
 
+/* Sign-up form
+-------------------------------------------------- */
+
+#sign-up {
+    background-color: $blue;
+    padding: $gutter .5*$gutter;
+    margin-bottom: $gutter;    
+    @media screen and (min-width: 580px) {
+      padding-left: 1.5*$gutter;
+      padding-right: 1.5*$gutter;
+    }
+    @media screen and (min-width: 760px) {
+      // padding: $gutter;
+    }
+    @media screen and (min-width: 1024px) {
+      padding-left: 2.5*$gutter;
+      padding-right: 2.5*$gutter;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 3.5*$gutter;
+      padding-right: 3.5*$gutter;
+    }
+}
+
 /* Site footer
 -------------------------------------------------- */
 
