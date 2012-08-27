@@ -594,6 +594,8 @@ a.btn-blue {
   margin: 0;
   padding: 0;
   list-style: none;
+  border-radius: 5px;
+  overflow: hidden;
   /* Clear fix */
   zoom: 1; }
   .button-set:before, .button-set:after {
@@ -611,12 +613,6 @@ a.btn-blue {
     margin-right: 0; }
   .button-set a.btn, .button-set a.btn-dark, .button-set a.btn-blue {
     border-radius: 0; }
-  .button-set li:first-child a.btn, .button-set li:first-child a.btn-dark, .button-set li:first-child a.btn-blue {
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px; }
-  .button-set li:last-child a.btn, .button-set li:last-child a.btn-dark, .button-set li:last-child a.btn-blue {
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px; }
 
 /* Reason badges
 -------------------------------------------------- */
