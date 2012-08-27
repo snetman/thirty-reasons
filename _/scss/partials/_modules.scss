@@ -266,8 +266,9 @@ a.btn-blue {
 /* Page title
 -------------------------------------------------- */
 
-.page title {
+.page-title {
   // any special page title styles go here.
+  padding-bottom: $gutter;
 }
 
 
@@ -284,6 +285,7 @@ a.btn-blue {
       img {
         display: block;
         position: relative;
+        outline: 1px solid $vlt-gray;
         @include transit(all, .15s, ease-out);
       }
     }
@@ -299,21 +301,22 @@ a.btn-blue {
       border-bottom: 2px solid $lt-gray;
       height: 2.3em;
   }
+  .image {
+    max-with: 280px; // match size of image thumbnails
+  }
   a:hover img {
-    left: -1px;
-    top: -2px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    outline-color: $blue;
+    box-shadow: 0 3px 16px rgba(0,0,0,.3);
   }
 }
 
 .poster-thumb-blank {
   @extend .poster-thumb;
   .image {
-    max-width: 280px; // match size of image thumbnails
-  }
-  img {
-    background-color: $vlt-gray;
-    outline: 1px dashed $lt-gray;
+    img {
+      background-color: $lt-gray;
+      outline: 1px dashed $gray;
+    }
   }
   .caption {
     color: $dk-gray;
@@ -326,7 +329,7 @@ a.btn-blue {
     margin-left: -1em;
     margin-top: -.6em;
     z-index: 2;
-    b {background-color: $gray;}
+    b {background-color: $dk-gray;}
   }
 }
 
@@ -417,6 +420,12 @@ a.btn-blue {
     &:first-child {border-right-width: 2px;}
 }
 
+/* Sign-up form
+-------------------------------------------------- */
+
+#sign-up {
+  label {color: $white;} 
+}
 
 /* Footer
 -------------------------------------------------- */

@@ -1,3 +1,16 @@
+/* Body
+-------------------------------------------------- */
+body {
+  @media screen and (min-width: 1280px) {
+    font-size: 18px;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 22px;
+  }
+}
+
+
+
 /* Wrapper
 -------------------------------------------------- */
 
@@ -11,13 +24,9 @@
 #site-header {
     padding: $gutter .5*$gutter;
     
-    // Reason logo
+    // The logo container
     #logo {
       @include grid-col(5);
-    }
-    // Reason badge
-    .reason-badge {
-      //@include grid-col(5);
     }
     
     // Main-nav
@@ -34,10 +43,6 @@
       #logo {
         @include grid-col(3);
       }
-      // Reason badge
-      .reason-badge {
-        //@include grid-col(3);
-      }      
       // Main nav
       .main-nav {
         @include grid-col(2);
