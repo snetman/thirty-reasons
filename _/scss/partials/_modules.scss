@@ -482,7 +482,7 @@ a.btn-blue {
         }
     }
     a {
-      font-weight: 500;
+      font-weight: 400;
       color: $white;
       display: block;
       padding: .6em .5*$gutter .5em;
@@ -501,6 +501,7 @@ a.btn-blue {
       top: 0;
     }
     .label {
+      font-weight: 500;
       display: block;
       float: left;
     }

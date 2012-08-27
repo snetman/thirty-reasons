@@ -1015,7 +1015,7 @@ a.btn-blue {
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px; }
   .main-nav a {
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     display: block;
     padding: 0.6em 0.7em 0.5em;
@@ -1043,6 +1043,7 @@ a.btn-blue {
     margin-right: .5em;
     top: 0; }
   .main-nav .label {
+    font-weight: 500;
     display: block;
     float: left; }
   .main-nav .arrow {
