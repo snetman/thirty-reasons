@@ -27,12 +27,7 @@ body {
     // The logo container
     #logo {
       @include grid-col(5);
-    }
-    
-    // Site navigation
-    #site-nav {
-      @include grid-col(5);
-      padding-bottom: 2*$gutter;
+      z-index: 3;
     }
     
     @media screen and (min-width: 580px) {
@@ -43,13 +38,6 @@ body {
       // Logo
       #logo {
         @include grid-col(2);
-      }
-      // Site navigation
-      #site-nav {
-        @include grid-col(3);
-        position: absolute;
-        top: 0;
-        right: 0;
       }
     }
     @media screen and (min-width: 980px) {
@@ -97,7 +85,7 @@ body {
 
 .main {
     @include grid-col(5);
-    padding-bottom: 1.4em; // needs this padding because it stacks directly on top of the sidebar in the smaller layouts
+    padding-bottom: $gutter; // needs this padding because it stacks directly on top of the sidebar in the smaller layouts
     @media screen and (min-width: 760px) {
       @include grid-col(3);
     }
@@ -151,6 +139,9 @@ body {
       padding-left: 3.5*$gutter;
       padding-right: 3.5*$gutter;
     }
+    .main {
+      padding-bottom: .5*$gutter;
+    }
 }
 
 /* Site footer
@@ -181,4 +172,33 @@ body {
       padding-left: 3.5*$gutter;
       padding-right: 3.5*$gutter;
     }
+}
+
+
+/* Site Navigation
+-------------------------------------------------- */
+
+#site-nav {
+  padding: 0 .5*$gutter 2*$gutter;
+
+  @media screen and (min-width: 580px) {
+    padding-left: 1.5*$gutter;
+    padding-right: 1.5*$gutter;
+  }
+  // Here's where it moves up top
+  @media screen and (min-width: 760px) {
+    position: absolute;
+    top: $gutter;
+    right: .5*$gutter;
+    padding-bottom: 0;
+  }
+  @media screen and (min-width: 980px) {
+    padding-left: 2.5*$gutter;
+    padding-right: 2.5*$gutter;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-left: 3.5*$gutter;
+    padding-right: 3.5*$gutter;
+  }
+
 }
