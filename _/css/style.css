@@ -594,8 +594,6 @@ a.btn-blue {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-radius: 5px;
-  overflow: hidden;
   /* Clear fix */
   zoom: 1; }
   .button-set:before, .button-set:after {
@@ -609,8 +607,14 @@ a.btn-blue {
     margin: 0;
     float: left;
     margin-right: 1px; }
+  .button-set li:first-child a.btn, .button-set li:first-child a.btn-dark, .button-set li:first-child a.btn-blue {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
   .button-set li:last-child {
     margin-right: 0; }
+    .button-set li:last-child a.btn, .button-set li:last-child a.btn-dark, .button-set li:last-child a.btn-blue {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px; }
   .button-set a.btn, .button-set a.btn-dark, .button-set a.btn-blue {
     border-radius: 0; }
 
@@ -948,7 +952,10 @@ a.btn-blue {
   margin: 0;
   padding: 0;
   /* Clear fix */
-  zoom: 1; }
+  zoom: 1;
+  border: 2px solid #dddddd;
+  border-left-width: 0;
+  border-right-width: 0; }
   .prev-next:before, .prev-next:after {
     content: "\0020";
     display: block;
@@ -964,12 +971,9 @@ a.btn-blue {
   padding: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 2px solid #dddddd;
-  border-left-width: 0;
-  border-right-width: 0; }
+  box-sizing: border-box; }
   .prev-next > li:first-child {
-    border-right-width: 2px; }
+    border-right: 2px solid #dddddd; }
 
 /* Sign-up form
 -------------------------------------------------- */
@@ -1032,6 +1036,8 @@ a.btn-blue {
       clear: both; }
     .main-nav a:hover {
       background-color: #555555; }
+  .main-nav .current a .icon, .main-nav .current a .label {
+    opacity: .5; }
   .main-nav .icon {
     display: block;
     position: relative;
@@ -1077,7 +1083,10 @@ a.btn-blue {
       .main-nav .icon {
         display: none; }
       .main-nav .arrow {
-        display: none; } }
+        display: none; }
+      .main-nav .current a .icon, .main-nav .current a .label {
+        color: #888888;
+        opacity: 1; } }
   @media screen and (min-width: 980px) {
     .main-nav .icon {
       display: block; } }

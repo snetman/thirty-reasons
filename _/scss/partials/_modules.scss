@@ -48,16 +48,20 @@ a.btn-blue {
     margin: 0;
     padding: 0;
     list-style: none;
-    border-radius: 5px;
-    overflow: hidden;
+    // border-radius: 5px;
+    // overflow: hidden;
     @include group;
     li {
         margin: 0;
         float: left;
         margin-right: 1px;
         }
+    li:first-child {
+        a.btn {border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
+    }
     li:last-child {
         margin-right: 0;
+        a.btn {border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
     }
     a.btn {
         border-radius: 0;
@@ -417,6 +421,9 @@ a.btn-blue {
     margin: 0;
     padding: 0;
     @include group;
+    border: 2px solid $lt-gray;
+    border-left-width: 0;
+    border-right-width: 0;
 }
 .prev-next > li {
     float: left;
@@ -424,10 +431,7 @@ a.btn-blue {
     margin: 0;
     padding: 0;
     @include box-size;
-    border: 2px solid $lt-gray;
-    border-left-width: 0;
-    border-right-width: 0;
-    &:first-child {border-right-width: 2px;}
+    &:first-child {border-right: 2px solid $lt-gray;}
 }
 
 /* Sign-up form
@@ -487,6 +491,9 @@ a.btn-blue {
         background-color: $vdk-gray;
       }
     }
+    .current a .icon, .current a .label {
+      opacity: .5;      
+    }
     .icon {
       display: block;
       position: relative;
@@ -506,7 +513,7 @@ a.btn-blue {
       top: .1em;
       opacity: .5;
     }
-    // Here's where the nav turns into a horizontal list
+    // Here's where the nav turns into a horizontal list and moves up top
     @media screen and (min-width: 760px) {
       float: right; // float it right so it aligns right.
       padding-top: .4em;
@@ -537,17 +544,23 @@ a.btn-blue {
           color: $black;
         }
       }
+      // nav highlighting
       .icon {
         display: none; // Hide the icons to save space
       }
       .arrow {
         display: none; // Hide the arrows since they aren't band buttons
       }      
+      .current a .icon, .current a .label {
+        color: $dk-gray;
+        opacity: 1;
+      }
     }
     @media screen and (min-width: 980px) {
       .icon {display: block;} // Bring the icons back since we have room
     }    
 }
+
 
 /* Nav header
 ------------------------- */
