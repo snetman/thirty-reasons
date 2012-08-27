@@ -18,10 +18,11 @@ $gutter: 1.4em; //22px;
 ------------------------- */
 
 @mixin grid-row {
-  @extend .group;
+  @include group;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
 }
 
 /* Cols

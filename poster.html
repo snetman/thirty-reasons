@@ -37,7 +37,7 @@
   <link href="_/webfonts/ss-standard.css" rel="stylesheet" />
 
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
-	<script src="_/js/modernizr-custom.min.js"></script>
+	<script src="_/js/modernizr-1.7.min.js"></script>
 	<script type="text/javascript" src="//use.typekit.net/caw8wxb.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -47,6 +47,20 @@
 <header id="site-header">
 
   <div class="wrap">
+
+    <ul class="nav-toggle">
+      <li><i class="ss-icon show-nav">rows</i></li>
+      <li><i class="ss-icon hide-nav">delete</i></li>
+    </ul>
+
+    <nav id="site-nav">
+      <ul class="main-nav">
+        <li><a href="#"><i class="icon ss-icon">&#x2302;</i> <span class="label">Home</span> <i class="arrow ss-icon">&#x25BB;</i></a></li>
+        <li><a href="#"><i class="icon ss-icon">&#xF072;</i> <span class="label">Today’s Reason</span> <i class="arrow ss-icon">&#x25BB;</i></a></li>
+        <li><a href="#"><i class="icon ss-icon">&#x1F4C5;</i> <span class="label">All Reasons</span> <i class="arrow ss-icon">&#x25BB;</i></a></li>
+        <li><a href="#"><i class="icon ss-icon">&#x2753;</i> <span class="label">About</span> <i class="arrow ss-icon">&#x25BB;</i></a></li>
+      </ul>
+    </nav>
   
     <div id="logo">
       <div class="reason-badge">
@@ -60,13 +74,6 @@
         </ul>
       </div>
     </div>
-    <nav>
-      <ul class="main-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Today</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
   
   </div>
 
