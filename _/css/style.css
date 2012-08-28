@@ -885,7 +885,9 @@ a.btn-sdark {
     -o-transition: color 0.2s linear;
     transition: color 0.2s linear; }
 .poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image {
-  max-with: 280px; }
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto; }
 .poster-thumb a:hover, .poster-thumb-dark a:hover, .poster-thumb-blank a:hover, .poster-thumb a:hover .date, .poster-thumb-dark a:hover .date, .poster-thumb-blank a:hover .date {
   color: #262626; }
 
@@ -953,7 +955,7 @@ a.btn-sdark {
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       float: left;
-      width: 33.333%;
+      width: 33.33333%;
       padding: 0 0.7em; } }
   @media screen and (min-width: 760px) {
     .poster-grid li, .poster-grid-onerow li {
@@ -1018,7 +1020,7 @@ a.btn-sdark {
     margin-bottom: 2.5714em;
     color: #555555; }
   .tombstone p + p {
-    margin-top: -2.571em; }
+    margin-top: -2.5714em; }
   .tombstone .signoff {
     padding-top: .65em;
     text-indent: 0;
