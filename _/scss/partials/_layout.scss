@@ -9,8 +9,6 @@ body {
   }
 }
 
-
-
 /* Wrapper
 -------------------------------------------------- */
 
@@ -56,7 +54,7 @@ body {
 ------------------------- */
 
 .content {
-    padding: $gutter .5*$gutter;
+    padding: $gutter .5*$gutter 2*$gutter;
 
     @media screen and (min-width: 580px) {
       padding-left: 1.5*$gutter;
@@ -155,7 +153,8 @@ body {
 -------------------------------------------------- */
 
 #site-footer {
-    padding: $gutter .5*$gutter 2*$gutter;    
+    padding: $gutter .5*$gutter 2*$gutter;
+    text-align: center;    
     // The social buttons
     .social {
       @include grid-col(5);
@@ -169,7 +168,14 @@ body {
       padding-right: 1.5*$gutter;
     }
     @media screen and (min-width: 760px) {
-      // padding: $gutter;
+      text-align: left;
+      .social {
+	      @include grid-col(2.5);
+      }
+      .copyright {
+      	  text-align: right;
+	      @include grid-col(2.5);
+      }
     }
     @media screen and (min-width: 980px) {
       padding-left: 2.5*$gutter;

@@ -99,6 +99,9 @@ a.btn-sdark {
         border-radius: .2em;
         background-color: $blue;
         text-align: center;
+        background-image: url(../img/bkg-reason-number.png);
+        background-repeat: repeat-x;
+        background-position: 50% 50%;
         @include transit(background-color, .2s, linear);
         &:first-child {
             margin-right: .08333333em; /* 2px at base */
@@ -300,12 +303,12 @@ a.btn-sdark {
     img {
       display: block;
       position: relative;
-      outline: 1px solid $vlt-gray;
+      border: 1px solid $border-gray;
       @include transit(all, .15s, ease-out);
     }
   }
   a:hover img {
-    outline-color: $blue;
+    border-color: $blue;
     box-shadow: 0 3px 16px rgba(0,0,0,.3);
   }
 }
@@ -348,7 +351,7 @@ a.btn-sdark {
     }
   }
   .image {
-    img {outline-color: $vdk-gray;}
+    img {border-color: $vdk-gray;}
   }
   a:hover, a:hover .date {
     color: $white;
@@ -363,7 +366,7 @@ a.btn-sdark {
   .image {
     img {
       background-color: $lt-gray;
-      outline: 1px dashed $gray;
+      border: 1px dashed $gray;
     }
   }
   .caption {
@@ -522,14 +525,17 @@ a.btn-sdark {
 -------------------------------------------------- */
 
 #site-footer {
-    .social {
+    .social > ul {
+    	display: inline-block;
         font-size: .75em;
         margin-bottom: 1em;
     }
-    .copyright {
+    .copyright > p {
         font-size: .75em;
         color: $dk-gray;
-    }        
+        max-width: none; // remove the width restriction on this so it can center properly
+        padding-top: .25em;
+    }
 }
 
 /* Main navigation
@@ -634,7 +640,12 @@ a.btn-sdark {
       }
     }
     @media screen and (min-width: 980px) {
-      .icon {display: block;} // Bring the icons back since we have room
+      .icon {
+      	display: block; // Bring the icons back since we have room
+      	margin-right: .35em;
+      	opacity: .8; // screen them back a bit
+      }
+      a:hover .icon {opacity: 1;} // make icons full strength black on hover
     }    
 }
 
@@ -644,7 +655,7 @@ a.btn-sdark {
 
 .main-nav-header {
   @include grid-col(5);
-  color: $dk-gray;
+  color: $vdk-gray;
   text-indent: 5px;
   margin-bottom: .5em;
 
