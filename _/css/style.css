@@ -639,6 +639,10 @@ a.btn-sdark {
     background-color: #888888;
     color: white; }
 
+a.btn-tall {
+  padding-top: .75em;
+  padding-bottom: .7em; }
+
 /* Button sets
 ------------------------- */
 .button-set {
@@ -1101,12 +1105,12 @@ a.btn-sdark {
 #site-footer .social > ul {
   display: inline-block;
   font-size: .75em;
-  margin-bottom: 1em; }
+  margin-bottom: .75em; }
 #site-footer .copyright > p {
   font-size: .75em;
   color: #888888;
   max-width: none;
-  padding-top: .25em; }
+  padding-top: .7em; }
 
 /* Main navigation
 -------------------------------------------------- */
@@ -1137,7 +1141,7 @@ a.btn-sdark {
     font-weight: 400;
     color: white;
     display: block;
-    padding: 0.6em 0.7em 0.5em;
+    padding: 1em 0.7em 0.9em;
     background-color: transparent;
     -webkit-transition: all 0.2s linear;
     -moz-transition: all 0.2s linear;

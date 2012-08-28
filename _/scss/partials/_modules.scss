@@ -49,6 +49,10 @@ a.btn-sdark {
     color: $white;
   } 
 }
+a.btn-tall {
+	padding-top: .75em;
+	padding-bottom: .7em;
+}
 
 /* Button sets
 ------------------------- */
@@ -528,13 +532,13 @@ a.btn-sdark {
     .social > ul {
     	display: inline-block;
         font-size: .75em;
-        margin-bottom: 1em;
+        margin-bottom: .75em;
     }
     .copyright > p {
         font-size: .75em;
         color: $dk-gray;
         max-width: none; // remove the width restriction on this so it can center properly
-        padding-top: .25em;
+        padding-top: .7em;
     }
 }
 
@@ -566,7 +570,7 @@ a.btn-sdark {
       font-weight: 400;
       color: $white;
       display: block;
-      padding: .6em .5*$gutter .5em;
+      padding: 1em .5*$gutter .9em;
       background-color: transparent;
       @include transit(all, .2s, linear);
       @include group;
