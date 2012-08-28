@@ -8,6 +8,7 @@
 a.btn {
     background-color: $vlt-gray;
     color: $gray;
+    cursor: hand;
     display: inline-block;
     padding: .35em .75em .3em;
     border-radius: 5px;
@@ -38,6 +39,15 @@ a.btn-blue {
         background-color: $vdk-gray;
         color: $white;
     }
+}
+a.btn-sdark {
+  @extend a.btn;
+  color: $black;
+  background-color: $vdk-gray;
+  &:hover {
+    background-color: $dk-gray;
+    color: $white;
+  } 
 }
 
 /* Button sets
@@ -281,19 +291,23 @@ a.btn-blue {
 -------------------------------------------------- */
 
 .poster {
+  margin: 0;
+  padding: 0;
+  .image {
+    position: relative;
     margin: 0;
     padding: 0;
-    .image {
+    img {
+      display: block;
       position: relative;
-      margin: 0;
-      padding: 0;
-      img {
-        display: block;
-        position: relative;
-        outline: 1px solid $vlt-gray;
-        @include transit(all, .15s, ease-out);
-      }
+      outline: 1px solid $vlt-gray;
+      @include transit(all, .15s, ease-out);
     }
+  }
+  a:hover img {
+    outline-color: $blue;
+    box-shadow: 0 3px 16px rgba(0,0,0,.3);
+  }
 }
 
 
@@ -309,13 +323,33 @@ a.btn-blue {
       padding: .75em 0;
       border-bottom: 2px solid $lt-gray;
       height: 2.3em;
+      .date {
+        display: block;
+        color: $dk-gray;
+        @include transit(color, .2s, linear);
+      }
   }
   .image {
     max-with: 280px; // match size of image thumbnails
   }
-  a:hover img {
-    outline-color: $blue;
-    box-shadow: 0 3px 16px rgba(0,0,0,.3);
+  a:hover, a:hover .date {
+    color: $black;
+    }
+}
+
+.poster-thumb-dark {
+  @extend .poster-thumb;
+  .caption {
+    border-bottom-color: $sdk-gray;
+    .date {
+      color: $dk-gray;
+    }
+  }
+  .image {
+    img {outline-color: $vdk-gray;}
+  }
+  a:hover, a:hover .date {
+    color: $white;
   }
 }
 
@@ -352,6 +386,7 @@ a.btn-blue {
   list-style: none;
   margin: 0;
   padding: 0;
+  @include group;
   li {
     margin: 0 0 2*$gutter 0;
     @include grid-col(5);
@@ -370,6 +405,37 @@ a.btn-blue {
   }
 }
 
+.poster-grid-onerow {
+  @extend .poster-grid;
+  li {
+    &:nth-child(n) {display: none;}
+    &:nth-child(-n+3) {display:list-item;} // only show 3 items max for linear layout
+  }
+  @media screen and (min-width: 480px) {
+    li {
+      &:nth-child(n) {display: none;}
+      &:nth-child(-n+2) {display:list-item;} // only show 2 items max for 2x grid
+    }
+  }
+  @media screen and (min-width: 580px) {
+    li {
+      &:nth-child(n) {display: none;}
+      &:nth-child(-n+3) {display:list-item;} // only show 3 items max for 3x grid
+    }
+  }  
+  @media screen and (min-width: 760px) {
+    li {
+      &:nth-child(n) {display: list-item;}
+      &:last-child {display:none;} // only show 4 items max for 4x grid
+    }
+  }
+  @media screen and (min-width: 980px) {
+    li {
+      &:last-child {display: list-item;}
+    }
+  }
+
+}
 
 /* Tombstone
 -------------------------------------------------- */
@@ -400,6 +466,11 @@ a.btn-blue {
     p + p {
         margin-top: -2.5714em;
     }
+    .signoff {
+        padding-top: .65em;
+        text-indent: 0;
+        color: $dk-gray;
+    }
     .share {
         font-size: .85714em; // 12/14
         list-style: none;
@@ -412,6 +483,9 @@ a.btn-blue {
     }           
 }    
 
+.reason-badge + .tombstone {
+  margin-top: 2*$gutter;
+}
 
 /* Previous / Next nav
 -------------------------------------------------- */
@@ -438,6 +512,7 @@ a.btn-blue {
 -------------------------------------------------- */
 
 #sign-up {
+  background-color: $blue;
   label {color: $white;}
 }
 
@@ -621,5 +696,34 @@ a.btn-blue {
   // Hide this once the nav moves up top
   @media screen and (min-width: 760px) {
     display: none;
+  }
+}
+
+/* Previously on...
+-------------------------------------------------- */
+
+#previously-on {
+  background-color: $black;
+  header {
+    @include grid-col(5);
+    color: $gray;
+    h2 {
+      margin-bottom: 1em;
+    }
+  }
+  footer {
+    @include grid-col(5);
+    color: $dk-gray;
+    text-align: center;
+    h3 {
+      margin-bottom: .7em;
+    }
+    @media screen and (min-width: 580px) {
+      h3 {
+        display: inline-block;
+        margin-right: .5em;
+        margin-bottom: 0;
+      }
+    }
   }
 } 

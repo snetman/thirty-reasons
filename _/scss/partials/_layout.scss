@@ -22,7 +22,7 @@ body {
 -------------------------------------------------- */
 
 #site-header {
-    padding: $gutter .5*$gutter;
+    padding: $gutter .5*$gutter 2*$gutter;
     
     // The logo container
     #logo {
@@ -89,8 +89,12 @@ body {
     @media screen and (min-width: 760px) {
       @include grid-col(3);
     }
+    @media screen and (min-width: 960px) {
+      padding-right: $gutter; // increase the standard right padding to make more room for the sidebar
+    }    
      @media screen and (min-width: 1200px) {
        @include grid-col(2.5);
+       padding-right: $gutter; // increase the standard right padding to make more room for the sidebar
     }  
 }
 
@@ -101,8 +105,12 @@ body {
     @media screen and (min-width: 760px) {
       @include grid-col(2);
     }
+    @media screen and (min-width: 960px) {
+      padding-left: $gutter;
+    }
      @media screen and (min-width: 1200px) {
-       @include grid-col(2.5);
+      @include grid-col(2.5);
+      padding-left: $gutter;
     }
 }
 
@@ -121,7 +129,6 @@ body {
 -------------------------------------------------- */
 
 #sign-up {
-    background-color: $blue;
     padding: $gutter .5*$gutter;
     margin-bottom: $gutter;    
     @media screen and (min-width: 580px) {
@@ -201,4 +208,27 @@ body {
     padding-right: 3.5*$gutter;
   }
 
+}
+
+/* Previously on...
+-------------------------------------------------- */
+
+#previously-on {
+    padding: 1.5*$gutter .5*$gutter 2*$gutter ;
+    //margin-bottom: $gutter;    
+    @media screen and (min-width: 580px) {
+      padding-left: 1.5*$gutter;
+      padding-right: 1.5*$gutter;
+    }
+    @media screen and (min-width: 760px) {
+      // padding: $gutter;
+    }
+    @media screen and (min-width: 980px) {
+      padding-left: 2.5*$gutter;
+      padding-right: 2.5*$gutter;
+    }
+    @media screen and (min-width: 1200px) {
+      padding-left: 3.5*$gutter;
+      padding-right: 3.5*$gutter;
+    }
 }
