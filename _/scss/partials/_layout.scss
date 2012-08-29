@@ -20,7 +20,7 @@ body {
 -------------------------------------------------- */
 
 #site-header {
-    padding: $gutter .5*$gutter 2*$gutter;
+    padding: $gutter .5*$gutter;
     
     // The logo container
     #logo {
@@ -33,6 +33,7 @@ body {
       padding-right: 1.5*$gutter;
     }
     @media screen and (min-width: 760px) {
+      padding-bottom: 2*$gutter;
       // Logo
       #logo {
         @include grid-col(2);
