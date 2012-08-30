@@ -125,9 +125,17 @@ a.btn-tall {
     margin: 0;
     padding: 0; // 3/24
     @include transit(color, .2s, linear);
-    a {
-        text-decoration: none;
-    }    
+    .permalink { // used on homepage and on today's poster page
+        color: $black;
+        .ss-icon {
+        	font-size: 80%;
+	    	color: $lt-gray;
+	    	@include transit(color, .2s, linear);
+	    }
+	    &:hover {
+		   .ss-icon {color: $blue;}
+	    }
+    }
 }
 
 /* Reason arrow

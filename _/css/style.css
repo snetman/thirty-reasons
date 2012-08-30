@@ -238,7 +238,7 @@ strong {
   font-weight: 700; }
 
 a {
-  color: #44a2e1;
+  color: #4c98dc;
   text-decoration: none;
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
@@ -304,7 +304,7 @@ form input[type="submit"] {
   font-style: normal;
   background-color: #262626;
   border-radius: 5px;
-  color: #44a2e1;
+  color: #4c98dc;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -ms-transition: all 0.2s linear;
@@ -625,7 +625,7 @@ a.btn, a.btn-dark, a.btn-blue, a.btn-sdark {
     top: .15em; }
   a.btn:hover, a.btn-dark:hover, a.btn-blue:hover, a.btn-sdark:hover {
     background-color: white;
-    color: #44a2e1; }
+    color: #4c98dc; }
 
 a.btn-dark {
   color: #888888;
@@ -633,7 +633,7 @@ a.btn-dark {
 
 a.btn-blue {
   color: white;
-  background-color: #44a2e1; }
+  background-color: #4c98dc; }
   a.btn-blue:hover {
     background-color: #555555;
     color: white; }
@@ -695,7 +695,7 @@ a.btn-tall {
     padding: 0;
     width: 1em;
     border-radius: .2em;
-    background-color: #44a2e1;
+    background-color: #4c98dc;
     text-align: center;
     background-image: url(../img/bkg-reason-number.png);
     background-repeat: repeat-x;
@@ -724,8 +724,18 @@ a.btn-tall {
   -ms-transition: color 0.2s linear;
   -o-transition: color 0.2s linear;
   transition: color 0.2s linear; }
-  .reason-name a {
-    text-decoration: none; }
+  .reason-name .permalink {
+    color: #262626; }
+    .reason-name .permalink .ss-icon {
+      font-size: 80%;
+      color: #dddddd;
+      -webkit-transition: color 0.2s linear;
+      -moz-transition: color 0.2s linear;
+      -ms-transition: color 0.2s linear;
+      -o-transition: color 0.2s linear;
+      transition: color 0.2s linear; }
+    .reason-name .permalink:hover .ss-icon {
+      color: #4c98dc; }
 
 /* Reason arrow
 ------------------------- */
@@ -767,7 +777,7 @@ a.btn-tall {
   margin-right: .25em; }
 .reason-logo .reason-name {
   float: left;
-  color: #44a2e1; }
+  color: #4c98dc; }
 .reason-logo .reason-social {
   clear: both;
   font-size: .75em;
@@ -829,11 +839,11 @@ a.btn-tall {
   .reason-button a:hover, .reason-button-righty a:hover {
     background-color: white; }
     .reason-button a:hover .reason-number b, .reason-button-righty a:hover .reason-number b {
-      background-color: #44a2e1; }
+      background-color: #4c98dc; }
     .reason-button a:hover .reason-name, .reason-button-righty a:hover .reason-name {
       color: #262626; }
     .reason-button a:hover .reason-arrow, .reason-button-righty a:hover .reason-arrow {
-      color: #44a2e1;
+      color: #4c98dc;
       left: -0.25em; }
   .reason-button a:before, .reason-button-righty a:before, .reason-button a:after, .reason-button-righty a:after {
     content: "\0020";
@@ -904,7 +914,7 @@ a.btn-tall {
       -o-transition: all 0.15s ease-out;
       transition: all 0.15s ease-out; }
   .poster a:hover img, .poster-thumb a:hover img, .poster-thumb-dark a:hover img, .poster-thumb-blank a:hover img {
-    border-color: #44a2e1;
+    border-color: #4c98dc;
     box-shadow: 0 3px 16px rgba(0, 0, 0, 0.3); }
 
 /* Thumbnails
@@ -1110,7 +1120,7 @@ a.btn-tall {
 /* Sign-up form
 -------------------------------------------------- */
 #sign-up {
-  background-color: #44a2e1;
+  background-color: #4c98dc;
   color: white;
   text-align: center; }
   #sign-up input {
@@ -1169,7 +1179,7 @@ a.btn-tall {
   .main-nav li {
     margin: 0;
     border-top: 1px solid white;
-    background-color: #44a2e1;
+    background-color: #4c98dc;
     overflow: hidden; }
     .main-nav li:first-child {
       border-top-width: 0;
@@ -1240,7 +1250,7 @@ a.btn-tall {
           padding-right: 0; }
       .main-nav a {
         padding: 0;
-        color: #44a2e1; }
+        color: #4c98dc; }
         .main-nav a:hover {
           background-color: transparent;
           color: #262626; }
