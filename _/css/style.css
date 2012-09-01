@@ -1173,6 +1173,8 @@ a.btn-tall {
   margin: 0;
   list-style: none;
   max-height: none;
+  border-radius: 5px;
+  overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1191,6 +1193,9 @@ a.btn-tall {
     .main-nav li:last-child {
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px; }
+  .main-nav #about {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px; }
   .main-nav a {
     font-weight: 400;
     color: white;
@@ -1231,6 +1236,8 @@ a.btn-tall {
     position: relative;
     top: .1em;
     opacity: .5; }
+  .main-nav #t, .main-nav #fb {
+    display: none; }
   @media screen and (min-width: 760px) {
     .main-nav {
       float: right;
@@ -1251,6 +1258,8 @@ a.btn-tall {
           border-right-width: 0;
           margin-right: 0;
           padding-right: 0; }
+      .main-nav #about {
+        border-radius: 0; }
       .main-nav a {
         padding: 0;
         color: #4c98dc; }
@@ -1263,7 +1272,10 @@ a.btn-tall {
         display: none; }
       .main-nav .current a .icon, .main-nav .current a .label {
         color: #888888;
-        opacity: 1; } }
+        opacity: 1; }
+      .main-nav #t, .main-nav #fb {
+        display: list-item;
+        opacity: .8; } }
   @media screen and (min-width: 980px) {
     .main-nav .icon {
       display: block;

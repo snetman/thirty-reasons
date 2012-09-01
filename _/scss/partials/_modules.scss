@@ -599,6 +599,8 @@ a.btn-tall {
     margin: 0;
     list-style: none;
     max-height: none;
+    border-radius: 5px;
+    overflow: hidden;
     @include grid-col(5);
     li {
         margin: 0;
@@ -614,6 +616,12 @@ a.btn-tall {
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
         }
+    }
+    // add explicit bottom border radius to about because i can't rely on generic last-child anymore because
+    // that slot is taken up by the social media links, which don't appear in the mobile menu
+    #about {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
     a {
       font-weight: 400;
@@ -649,6 +657,10 @@ a.btn-tall {
       top: .1em;
       opacity: .5;
     }
+    // don't display the twitter and facebook main nav items when the nav is mobile style at the bottom since the big buttons are right there
+    #t, #fb {
+      display: none;
+      } 
     // Here's where the nav turns into a horizontal list and moves up top
     @media screen and (min-width: 760px) {
       float: right; // float it right so it aligns right.
@@ -672,6 +684,8 @@ a.btn-tall {
           padding-right: 0;
         }
       }
+      // turn off explicit border radius for about button
+      #about {border-radius: 0;}
       a {
         padding: 0;
         color: $blue;
@@ -691,6 +705,7 @@ a.btn-tall {
         color: $dk-gray;
         opacity: 1;
       }
+      #t, #fb {display: list-item; opacity: .8;} // display the twitter and fb buttons when the nav is at the top of the screen.
     }
     @media screen and (min-width: 980px) {
       .icon {
