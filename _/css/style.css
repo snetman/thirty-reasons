@@ -737,6 +737,18 @@ a.btn-tall {
     .reason-name .permalink:hover .ss-icon {
       color: #4c98dc; }
 
+/* Reason tagline
+------------------------- */
+.reason-tagline {
+  font-size: .75em;
+  line-height: 1.25em;
+  font-weight: 500;
+  font-style: normal;
+  display: block;
+  margin: 0;
+  padding: .66666em 0 0;
+  color: #4c98dc; }
+
 /* Reason arrow
 ------------------------- */
 .reason-arrow {
@@ -772,20 +784,24 @@ a.btn-tall {
 
 /* Reason logo
 ------------------------- */
-.reason-logo .reason-number {
-  float: left;
-  margin-right: .25em; }
-.reason-logo .reason-name {
-  float: left;
-  color: #4c98dc; }
-.reason-logo .reason-social {
-  clear: both;
-  font-size: .75em;
-  padding-top: 1em; }
-.reason-logo a:hover .reason-number b {
-  background-color: #262626; }
-.reason-logo a:hover .reason-name {
-  color: #262626; }
+.reason-logo {
+  display: inline-block; }
+  .reason-logo .reason-number {
+    float: left;
+    margin-right: .25em; }
+  .reason-logo .reason-name {
+    float: left;
+    color: #4c98dc; }
+  .reason-logo .reason-social {
+    clear: both;
+    font-size: .75em;
+    padding-top: 1em; }
+  .reason-logo .reason-tagline {
+    clear: both; }
+  .reason-logo a:hover .reason-number b {
+    background-color: #262626; }
+  .reason-logo a:hover .reason-name {
+    color: #262626; }
 
 /* Reason button
 ------------------------- */
@@ -902,7 +918,7 @@ a.btn-tall {
   padding: 0; }
   .poster .image, .poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image {
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     padding: 0; }
     .poster .image img, .poster-thumb .image img, .poster-thumb-dark .image img, .poster-thumb-blank .image img {
       display: block;
@@ -1322,6 +1338,8 @@ a.btn-tall {
     line-height: 1.4em; }
   #nav-jump .label {
     display: none; }
+  #nav-jump .ie7 .label, #nav-jump .ie8 .label {
+    display: inline; }
   @media screen and (min-width: 480px) {
     #nav-jump .label {
       display: inline; }

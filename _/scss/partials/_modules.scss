@@ -138,6 +138,20 @@ a.btn-tall {
     }
 }
 
+/* Reason tagline
+------------------------- */
+
+.reason-tagline {
+  font-size: .75em; // 12/16
+  line-height: 1.25em; // 15/12
+  font-weight: 500;
+  font-style: normal;
+  display: block;
+  margin: 0;
+  padding: .66666em 0 0; // 8/12
+  color: $blue;
+}
+
 /* Reason arrow
 ------------------------- */
 
@@ -176,6 +190,7 @@ a.btn-tall {
 ------------------------- */
 
 .reason-logo {
+    display: inline-block;
     .reason-number {
         float: left;
         margin-right: .25em;
@@ -188,6 +203,9 @@ a.btn-tall {
         clear: both;
         font-size: .75em;
         padding-top: 1em;
+    }
+    .reason-tagline {
+      clear: both;
     }
     a {
       &:hover {
@@ -321,7 +339,7 @@ a.btn-tall {
   padding: 0;
   .image {
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     img {
       display: block;
@@ -753,6 +771,10 @@ a.btn-tall {
   }
   .label {
     display: none;
+  }
+  // on IE versions without media queries, always show the menu label
+  .ie7 .label, .ie8 .label {
+    display: inline;
   }
   @media screen and (min-width: 480px) {
     .label {
