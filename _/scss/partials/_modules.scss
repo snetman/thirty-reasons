@@ -389,7 +389,7 @@ a.btn-tall {
   .image {
     img {
       background-color: $lt-gray;
-      border: 1px dashed $gray;
+      border: 1px dotted $gray;
     }
   }
   .caption {
@@ -472,7 +472,6 @@ a.btn-tall {
     font-size: .875em; // 14/16
     background-color: $vlt-gray;
     padding: 1.25em 1.5em 1.5em;
-    border: 1px solid $vlt-gray;
     box-shadow: 0 3px 12px rgba(0,0,0,.25);
     .title {
       font-size: 1em; // 14/14
@@ -513,6 +512,12 @@ a.btn-tall {
 
 .reason-badge + .tombstone {
   margin-top: 2*$gutter;
+}
+
+// adjust for no-box shadow browsers
+.no-boxshadow .tombstone {
+  border-bottom: 1px solid $lt-gray;
+  border-right: 1px solid $lt-gray;
 }
 
 /* Previous / Next nav
