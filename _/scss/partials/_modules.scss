@@ -599,8 +599,6 @@ a.btn-tall {
     margin: 0;
     list-style: none;
     max-height: none;
-    border-radius: 5px;
-    overflow: hidden;
     @include grid-col(5);
     li {
         margin: 0;
@@ -622,6 +620,9 @@ a.btn-tall {
     #about {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
+    }
+    #today {
+      display: none;
     }
     a {
       font-weight: 400;

@@ -376,7 +376,7 @@ form input[type="submit"]:focus {
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         float: left;
-        width: 40%;
+        width: 60%;
         padding: 0 0.7em; } }
   @media screen and (min-width: 980px) {
     #site-header {
@@ -1173,8 +1173,6 @@ a.btn-tall {
   margin: 0;
   list-style: none;
   max-height: none;
-  border-radius: 5px;
-  overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1196,6 +1194,8 @@ a.btn-tall {
   .main-nav #about {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
+  .main-nav #today {
+    display: none; }
   .main-nav a {
     font-weight: 400;
     color: white;
