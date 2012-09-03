@@ -613,11 +613,11 @@ a.btn-tall {
 -------------------------------------------------- */
 
 .main-nav {
+    @include grid-col(5);
     padding: 0;
     margin: 0;
     list-style: none;
     max-height: none;
-    @include grid-col(5);
     li {
         margin: 0;
         border-top: 1px solid $white;
@@ -707,6 +707,8 @@ a.btn-tall {
       #about {border-radius: 0;}
       a {
         padding: 0;
+        padding-top: .25em; // give these some padding to center the nav links vertically on the borders.
+        padding-bottom: .3em;
         color: $blue;
         &:hover {
           background-color: transparent;
@@ -724,9 +726,10 @@ a.btn-tall {
         color: $dk-gray;
         opacity: 1;
       }
-      #t, #fb {display: list-item; opacity: .8;} // display the twitter and fb buttons when the nav is at the top of the screen.
+      #t, #fb {display: list-item; opacity: .8; border-width: 0; padding-right: 0;} // display the twitter and fb buttons when the nav is at the top of the screen. Don't separate them with borders or extra padding.
     }
     @media screen and (min-width: 980px) {
+      a {padding-bottom: .15em;} // adjust padding bottom. When icons appear, it throws off the even top bottom padding.
       .icon {
       	display: block; // Bring the icons back since we have room
       	margin-right: .35em;
@@ -801,7 +804,9 @@ a.btn-tall {
     @include grid-col(5);
     color: $gray;
     h2 {
-      margin-bottom: 1em;
+      font-size: 1.5em;
+      line-height: 1.25em;
+      margin-bottom: .75em; //1em;
     }
   }
   footer {

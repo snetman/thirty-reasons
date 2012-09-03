@@ -20,6 +20,7 @@ body {
 -------------------------------------------------- */
 
 #site-header {
+    position: relative;
     padding: $gutter .5*$gutter;
     
     // The logo container
@@ -201,7 +202,7 @@ body {
   // Here's where it moves up top
   @media screen and (min-width: 760px) {
     position: absolute;
-    top: $gutter;
+    top: .85*$gutter; // help it to align with the logo baseline
     right: .5*$gutter;
     padding-bottom: 0;
   }

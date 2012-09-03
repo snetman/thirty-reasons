@@ -355,6 +355,7 @@ form input[type="submit"]:focus {
 /* Site header
 -------------------------------------------------- */
 #site-header {
+  position: relative;
   padding: 1.4em 0.7em; }
   #site-header #logo {
     -webkit-box-sizing: border-box;
@@ -571,7 +572,7 @@ form input[type="submit"]:focus {
   @media screen and (min-width: 760px) {
     #site-nav {
       position: absolute;
-      top: 1.4em;
+      top: 1.19em;
       right: 0.7em;
       padding-bottom: 0; } }
   @media screen and (min-width: 980px) {
@@ -1185,16 +1186,16 @@ a.btn-tall {
 /* Main navigation
 -------------------------------------------------- */
 .main-nav {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  max-height: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   float: left;
   width: 100%;
-  padding: 0 0.7em; }
+  padding: 0 0.7em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: none; }
   .main-nav li {
     margin: 0;
     border-top: 1px solid white;
@@ -1278,6 +1279,8 @@ a.btn-tall {
         border-radius: 0; }
       .main-nav a {
         padding: 0;
+        padding-top: .25em;
+        padding-bottom: .3em;
         color: #4c98dc; }
         .main-nav a:hover {
           background-color: transparent;
@@ -1291,8 +1294,12 @@ a.btn-tall {
         opacity: 1; }
       .main-nav #t, .main-nav #fb {
         display: list-item;
-        opacity: .8; } }
+        opacity: .8;
+        border-width: 0;
+        padding-right: 0; } }
   @media screen and (min-width: 980px) {
+    .main-nav a {
+      padding-bottom: .15em; }
     .main-nav .icon {
       display: block;
       margin-right: .35em;
@@ -1363,7 +1370,9 @@ a.btn-tall {
     padding: 0 0.7em;
     color: #a6a6a6; }
     #previously-on header h2 {
-      margin-bottom: 1em; }
+      font-size: 1.5em;
+      line-height: 1.25em;
+      margin-bottom: .75em; }
   #previously-on footer {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
