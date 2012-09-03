@@ -24,10 +24,9 @@ body {
     
     // The logo container
     #logo {
-      @include grid-col(5);
+      @include grid-col(4.5);
       z-index: 3;
     }
-    
     @media screen and (min-width: 580px) {
       padding-left: 1.5*$gutter;
       padding-right: 1.5*$gutter;

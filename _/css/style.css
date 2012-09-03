@@ -361,7 +361,7 @@ form input[type="submit"]:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
-    width: 100%;
+    width: 90%;
     padding: 0 0.7em;
     z-index: 3; }
   @media screen and (min-width: 580px) {
@@ -746,7 +746,7 @@ a.btn-tall {
   font-style: normal;
   display: block;
   margin: 0;
-  padding: .66666em 0 0;
+  padding: .5em 0 0;
   color: #4c98dc; }
 
 /* Reason arrow
