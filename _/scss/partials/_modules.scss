@@ -257,6 +257,11 @@ a.btn-tall {
             padding: .1875em 0; // 3/16
             line-height: 1.5em; // 24/16
         }
+        @media screen and (min-width: 1600px) {
+            font-size: .8181818181em; // 18/22 Preserving size from the 1200px width
+            padding: .16666667em 0; // 3/18
+            line-height: 1.3333333em; // 24/18
+        }
     }  
     a {
         display: block;
@@ -305,6 +310,9 @@ a.btn-tall {
         }
         @media screen and (min-width: 1200px) {
             padding: .1875em 0; // 3/16
+        }
+        @media screen and (min-width: 1600px) {
+            padding: .16666667em 0; // 3/18
         }
     }
     a:hover .reason-arrow {left: .25em;}
