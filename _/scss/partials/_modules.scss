@@ -738,7 +738,10 @@ a.btn-tall {
       .icon {
       	display: block; // Bring the icons back since we have room
       	margin-right: .35em;
-      	opacity: .8; // screen them back a bit
+      	// opacity: .8; // screen them back a bit
+      	opacity: 1;
+      	position: relative;
+      	top: -.1em;
       }
       a:hover .icon {opacity: 1;} // make icons full strength black on hover
     }    
@@ -768,7 +771,7 @@ a.btn-tall {
   @include grid-col(2);
   margin: 0;
   position: absolute;
-  top: .4em;
+  top: 0;
   right: 0;
   z-index: 2;
   text-align: right;
@@ -788,12 +791,24 @@ a.btn-tall {
   @media screen and (min-width: 480px) {
     .label {
       display: inline;
-    }
-    .icon {
       position: relative;
-      top: .15em;
+      top: -.15em;
     }
   }
+  // Hide this once the nav moves up top
+  @media screen and (min-width: 760px) {
+    display: none;
+  }
+}
+
+/* Back to top
+------------------------- */
+
+.top {
+  @include grid-col(5);
+  text-indent: 5px;
+  margin-top: .5em;
+  font-weight: 700;
   // Hide this once the nav moves up top
   @media screen and (min-width: 760px) {
     display: none;

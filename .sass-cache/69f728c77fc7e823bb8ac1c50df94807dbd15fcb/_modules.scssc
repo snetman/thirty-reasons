@@ -1,8 +1,8 @@
 3.1.15 (Brainy Betty)
-812bfebfe9ed458cbf70c2c408a461d134cf4214
+1491dd2a49969f3bcdd91e434d2d269551178e6b
 o:Sass::Tree::RootNode
 :
-@linei:@has_childrenT:@template"G/* Buttons
+@linei:@has_childrenT:@template"(H/* Buttons
 -------------------------------------------------- */
 
 
@@ -742,7 +742,10 @@ a.btn-tall {
       .icon {
       	display: block; // Bring the icons back since we have room
       	margin-right: .35em;
-      	opacity: .8; // screen them back a bit
+      	// opacity: .8; // screen them back a bit
+      	opacity: 1;
+      	position: relative;
+      	top: -.1em;
       }
       a:hover .icon {opacity: 1;} // make icons full strength black on hover
     }    
@@ -772,7 +775,7 @@ a.btn-tall {
   @include grid-col(2);
   margin: 0;
   position: absolute;
-  top: .4em;
+  top: 0;
   right: 0;
   z-index: 2;
   text-align: right;
@@ -792,12 +795,24 @@ a.btn-tall {
   @media screen and (min-width: 480px) {
     .label {
       display: inline;
-    }
-    .icon {
       position: relative;
-      top: .15em;
+      top: -.15em;
     }
   }
+  // Hide this once the nav moves up top
+  @media screen and (min-width: 760px) {
+    display: none;
+  }
+}
+
+/* Back to top
+------------------------- */
+
+.top {
+  @include grid-col(5);
+  text-indent: 5px;
+  margin-top: .5em;
+  font-weight: 700;
   // Hide this once the nav moves up top
   @media screen and (min-width: 760px) {
     display: none;
@@ -833,7 +848,7 @@ a.btn-tall {
       }
     }
   }
-} :@options{ :@children[@o:Sass::Tree::CommentNode:@value["E/* Buttons
+} :@options{ :@children[Bo:Sass::Tree::CommentNode:@value["E/* Buttons
 -------------------------------------------------- */;i:
 @loud0;	@:@silent0;
 [ o;;["5/* Links as buttons
@@ -1771,101 +1786,113 @@ o;;i ;iá;T;["a;o;;" ;iá;[o;;[o;;@H;iá;[o;	;@
 [ o;;["_/* adjust padding bottom. When icons appear, it throws off the even top bottom padding. */;iá;0;	@;i ;
 [ o;;i ;iâ;T;["
 .icon;o;;" ;iâ;[o;;[o;;@`;iâ;[o;;@`;["	icon;iâ;	@;
-[
-o;;i ;;;o;!;";#;"
+[o;;i ;;;o;!;";#;"
 block;	@;["display;iã;	@;
 [ o;;["2/* Bring the icons back since we have room */;iã;0;	@;i ;
 [ o;;i ;;;o;!;";#;"
 .35em;	@;["margin-right;iä;	@;
-[ o;;i ;;;o;!;";#;".8;	@;["opacity;iå;	@;
-[ o;;["!/* screen them back a bit */;iå;0;	@;i ;
-[ o;;i ;iç;T;["a:hover .icon;o;;" ;iç;[o;;[o;;@ˆ;iç;[o;	;@ˆ;["a;iç;0o;,
-;@ˆ;["
-hover;";-;iç;.0o;;@ˆ;iç;[o;;@ˆ;["	icon;iç;	@;
-[o;;i ;;;o;!;";#;"1;	@;["opacity;iç;	@;
-[ o;;["2/* make icons full strength black on hover */;iç;0;	@;i ;
+[ o;;["1/* opacity: .8; // screen them back a bit */;iå;0;	@;i ;
+[ o;;i ;;;o;!;";#;"1;	@;["opacity;iæ;	@;
+[ o;;i ;;;o;!;";#;"relative;	@;["position;iç;	@;
+[ o;;i ;;;o;';f-0.10000000000000001 ™š;("-0.1em;iè;)[ ;	@;*["em;["top;iè;	@;
+[ o;;i ;iê;T;["a:hover .icon;o;;" ;iê;[o;;[o;;@˜;iê;[o;	;@˜;["a;iê;0o;,
+;@˜;["
+hover;";-;iê;.0o;;@˜;iê;[o;;@˜;["	icon;iê;	@;
+[o;;i ;;;o;!;";#;"1;	@;["opacity;iê;	@;
+[ o;;["2/* make icons full strength black on hover */;iê;0;	@;i ;
 [ o;;["//* Nav header
-------------------------- */;iì;0;	@;0;
-[ o;;["B/* The "Navigation" label that appears over the button nav */;iï;0;	@;i ;
-[ o;;i ;ið;T;[".main-nav-header;o;;" ;ið;[o;;[o;;@°;ið;[o;;@°;["main-nav-header;ið;	@;
-[o;$;%{ ;"grid-col;iñ;	@;
+------------------------- */;iï;0;	@;0;
+[ o;;["B/* The "Navigation" label that appears over the button nav */;iò;0;	@;i ;
+[ o;;i ;ió;T;[".main-nav-header;o;;" ;ió;[o;;[o;;@À;ió;[o;;@À;["main-nav-header;ió;	@;
+[o;$;%{ ;"grid-col;iô;	@;
 [ ;&[o;';i
-;("5;iñ;)@	;	@;*[ o;;i ;;;o;	;"vdk-gray;iò;	@; "vdk_gray;["
-color;iò;	@;
-[ o;;i ;;;o;!;";#;"5px;	@;["text-indent;ió;	@;
-[ o;;i ;;;o;!;";#;"	.5em;	@;["margin-bottom;iô;	@;
-[ o;;["./* Hide this once the nav moves up top */;iö;0;	@;i ;
-[ o;1;i ;" ;2[""screen and (min-width: 760px);i÷;T;	@;
-[o;;i ;;;o;!;";#;"	none;	@;["display;iø;	@;
+;("5;iô;)@	;	@;*[ o;;i ;;;o;	;"vdk-gray;iõ;	@; "vdk_gray;["
+color;iõ;	@;
+[ o;;i ;;;o;!;";#;"5px;	@;["text-indent;iö;	@;
+[ o;;i ;;;o;!;";#;"	.5em;	@;["margin-bottom;i÷;	@;
+[ o;;["./* Hide this once the nav moves up top */;iù;0;	@;i ;
+[ o;1;i ;" ;2[""screen and (min-width: 760px);iú;T;	@;
+[o;;i ;;;o;!;";#;"	none;	@;["display;iû;	@;
 [ o;;["-/* Nav jump
-------------------------- */;iü;0;	@;0;
-[ o;;i ;iÿ;T;["#nav-jump;o;;" ;iÿ;[o;;[o;;@ì;iÿ;[o;=;@ì;["nav-jump;iÿ;	@;
-[o;$;%{ ;"grid-col;i ;	@;
-[ ;&[o;';i;("2;i ;)@	;	@;*[ o;;i ;;;o;!;";#;"0;	@;["margin;i;	@;
-[ o;;i ;;;o;!;";#;"absolute;	@;["position;i;	@;
-[ o;;i ;;;o;!;";#;"	.4em;	@;["top;i;	@;
+------------------------- */;iÿ;0;	@;0;
+[ o;;i ;i;T;["#nav-jump;o;;" ;i;[o;;[o;;@ü;i;[o;=;@ü;["nav-jump;i;	@;
+[o;$;%{ ;"grid-col;i;	@;
+[ ;&[o;';i;("2;i;)@	;	@;*[ o;;i ;;;o;!;";#;"0;	@;["margin;i;	@;
+[ o;;i ;;;o;!;";#;"absolute;	@;["position;i;	@;
+[ o;;i ;;;o;!;";#;"0;	@;["top;i;	@;
 [ o;;i ;;;o;!;";#;"0;	@;["
-right;i;	@;
-[ o;;i ;;;o;!;";#;"2;	@;["z-index;i;	@;
+right;i;	@;
+[ o;;i ;;;o;!;";#;"2;	@;["z-index;i;	@;
 [ o;;i ;;;o;!;";#;"
-right;	@;["text-align;i;	@;
-[ o;;i ;i;T;["a;o;;" ;i;[o;;[o;;@&;i;[o;	;@&;["a;i;0;	@;
-[	o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
-[ o;;i ;;;o;!;";#;"1em;	@;["font-size;i	;	@;
-[ o;;i ;;;o;!;";#;"500;	@;["font-weight;i
-;	@;
+right;	@;["text-align;i	;	@;
+[ o;;i ;i
+;T;["a;o;;" ;i
+;[o;;[o;;@6;i
+;[o;	;@6;["a;i
+;0;	@;
+[	o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
+[ o;;i ;;;o;!;";#;"1em;	@;["font-size;i;	@;
+[ o;;i ;;;o;!;";#;"500;	@;["font-weight;i;	@;
 [ o;;i ;;;o;!;";#;"
-1.4em;	@;["line-height;i;	@;
-[ o;;i ;i;T;[".label;o;;" ;i;[o;;[o;;@L;i;[o;;@L;["
-label;i;	@;
-[o;;i ;;;o;!;";#;"	none;	@;["display;i;	@;
-[ o;;["K/* on IE versions without media queries, always show the menu label */;i;0;	@;i ;
-[ o;;i ;i;T;[".ie7 .label, .ie8 .label;o;;" ;i;[o;;[o;;@d;i;[o;;@d;["ie7;io;;@d;i;[o;;@d;["
-label;io;;[o;;@d;i;[o;;@d;["ie8;io;;@d;i;[o;;@d;["
-label;i;	@;
-[o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
-[ o;1;i ;" ;2[""screen and (min-width: 480px);i;T;	@;
-[o;;i ;i;T;[".label;o;;" ;i;[o;;[o;;@Ž;i;[o;;@Ž;["
-label;i;	@;
-[o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
-[ o;;i ;i;T;["
-.icon;o;;" ;i;[o;;[o;;@¢;i;[o;;@¢;["	icon;i;	@;
-[o;;i ;;;o;!;";#;"relative;	@;["position;i;	@;
-[ o;;i ;;;o;!;";#;"
-.15em;	@;["top;i;	@;
-[ o;;["./* Hide this once the nav moves up top */;i;0;	@;i ;
-[ o;1;i ;" ;2[""screen and (min-width: 760px);i;T;	@;
-[o;;i ;;;o;!;";#;"	none;	@;["display;i;	@;
+1.4em;	@;["line-height;i;	@;
+[ o;;i ;i;T;[".label;o;;" ;i;[o;;[o;;@\;i;[o;;@\;["
+label;i;	@;
+[o;;i ;;;o;!;";#;"	none;	@;["display;i;	@;
+[ o;;["K/* on IE versions without media queries, always show the menu label */;i;0;	@;i ;
+[ o;;i ;i;T;[".ie7 .label, .ie8 .label;o;;" ;i;[o;;[o;;@t;i;[o;;@t;["ie7;io;;@t;i;[o;;@t;["
+label;io;;[o;;@t;i;[o;;@t;["ie8;io;;@t;i;[o;;@t;["
+label;i;	@;
+[o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
+[ o;1;i ;" ;2[""screen and (min-width: 480px);i;T;	@;
+[o;;i ;i;T;[".label;o;;" ;i;[o;;[o;;@ž;i;[o;;@ž;["
+label;i;	@;
+[o;;i ;;;o;!;";#;"inline;	@;["display;i;	@;
+[ o;;i ;;;o;!;";#;"relative;	@;["position;i;	@;
+[ o;;i ;;;o;';f-0.14999999999999999 33;("-0.15em;i;)[ ;	@;*["em;["top;i;	@;
+[ o;;["./* Hide this once the nav moves up top */;i;0;	@;i ;
+[ o;1;i ;" ;2[""screen and (min-width: 760px);i;T;	@;
+[o;;i ;;;o;!;";#;"	none;	@;["display;i ;	@;
+[ o;;["0/* Back to top
+------------------------- */;i$;0;	@;0;
+[ o;;i ;i';T;["	.top;o;;" ;i';[o;;[o;;@Õ;i';[o;;@Õ;["top;i';	@;
+[o;$;%{ ;"grid-col;i(;	@;
+[ ;&[o;';i
+;("5;i(;)@	;	@;*[ o;;i ;;;o;!;";#;"5px;	@;["text-indent;i);	@;
+[ o;;i ;;;o;!;";#;"	.5em;	@;["margin-top;i*;	@;
+[ o;;i ;;;o;!;";#;"700;	@;["font-weight;i+;	@;
+[ o;;["./* Hide this once the nav moves up top */;i,;0;	@;i ;
+[ o;1;i ;" ;2[""screen and (min-width: 760px);i-;T;	@;
+[o;;i ;;;o;!;";#;"	none;	@;["display;i.;	@;
 [ o;;["N/* Previously on...
--------------------------------------------------- */;i#;0;	@;0;
-[ o;;i ;i&;T;["#previously-on;o;;" ;i&;[o;;[o;;@Ï;i&;[o;=;@Ï;["previously-on;i&;	@;
+-------------------------------------------------- */;i2;0;	@;0;
+[ o;;i ;i5;T;["#previously-on;o;;" ;i5;[o;;[o;;@;i5;[o;=;@;["previously-on;i5;	@;
 [o;;i ;;;o;	;"
-black;i';	@; "
-black;["background-color;i';	@;
-[ o;;i ;i(;T;["header;o;;" ;i(;[o;;[o;;@ä;i(;[o;	;@ä;["header;i(;0;	@;
-[o;$;%{ ;"grid-col;i);	@;
+black;i6;	@; "
+black;["background-color;i6;	@;
+[ o;;i ;i7;T;["header;o;;" ;i7;[o;;[o;;@%;i7;[o;	;@%;["header;i7;0;	@;
+[o;$;%{ ;"grid-col;i8;	@;
 [ ;&[o;';i
-;("5;i);)@	;	@;*[ o;;i ;;;o;	;"	gray;i*;	@; "	gray;["
-color;i*;	@;
-[ o;;i ;i+;T;["h2;o;;" ;i+;[o;;[o;;@;i+;[o;	;@;["h2;i+;0;	@;
+;("5;i8;)@	;	@;*[ o;;i ;;;o;	;"	gray;i9;	@; "	gray;["
+color;i9;	@;
+[ o;;i ;i:;T;["h2;o;;" ;i:;[o;;[o;;@B;i:;[o;	;@B;["h2;i:;0;	@;
 [	o;;i ;;;o;!;";#;"
-1.5em;	@;["font-size;i,;	@;
-[ o;;i ;;;o;!;";#;"1.25em;	@;["line-height;i-;	@;
+1.5em;	@;["font-size;i;;	@;
+[ o;;i ;;;o;!;";#;"1.25em;	@;["line-height;i<;	@;
 [ o;;i ;;;o;!;";#;"
-.75em;	@;["margin-bottom;i.;	@;
-[ o;;["/*1em; */;i.;0;	@;i ;
-[ o;;i ;i1;T;["footer;o;;" ;i1;[o;;[o;;@%;i1;[o;	;@%;["footer;i1;0;	@;
+.75em;	@;["margin-bottom;i=;	@;
+[ o;;["/*1em; */;i=;0;	@;i ;
+[ o;;i ;i@;T;["footer;o;;" ;i@;[o;;[o;;@f;i@;[o;	;@f;["footer;i@;0;	@;
 [
-o;$;%{ ;"grid-col;i2;	@;
+o;$;%{ ;"grid-col;iA;	@;
 [ ;&[o;';i
-;("5;i2;)@	;	@;*[ o;;i ;;;o;	;"dk-gray;i3;	@; "dk_gray;["
-color;i3;	@;
-[ o;;i ;;;o;!;";#;"center;	@;["text-align;i4;	@;
-[ o;;i ;i5;T;["h3;o;;" ;i5;[o;;[o;;@H;i5;[o;	;@H;["h3;i5;0;	@;
-[o;;i ;;;o;!;";#;"	.7em;	@;["margin-bottom;i6;	@;
-[ o;1;i ;" ;2[""screen and (min-width: 580px);i8;T;	@;
-[o;;i ;i9;T;["h3;o;;" ;i9;[o;;[o;;@a;i9;[o;	;@a;["h3;i9;0;	@;
-[o;;i ;;;o;!;";#;"inline-block;	@;["display;i:;	@;
-[ o;;i ;;;o;!;";#;"	.5em;	@;["margin-right;i;;	@;
-[ o;;i ;;;o;!;";#;"0;	@;["margin-bottom;i<;	@;
+;("5;iA;)@	;	@;*[ o;;i ;;;o;	;"dk-gray;iB;	@; "dk_gray;["
+color;iB;	@;
+[ o;;i ;;;o;!;";#;"center;	@;["text-align;iC;	@;
+[ o;;i ;iD;T;["h3;o;;" ;iD;[o;;[o;;@‰;iD;[o;	;@‰;["h3;iD;0;	@;
+[o;;i ;;;o;!;";#;"	.7em;	@;["margin-bottom;iE;	@;
+[ o;1;i ;" ;2[""screen and (min-width: 580px);iG;T;	@;
+[o;;i ;iH;T;["h3;o;;" ;iH;[o;;[o;;@¢;iH;[o;	;@¢;["h3;iH;0;	@;
+[o;;i ;;;o;!;";#;"inline-block;	@;["display;iI;	@;
+[ o;;i ;;;o;!;";#;"	.5em;	@;["margin-right;iJ;	@;
+[ o;;i ;;;o;!;";#;"0;	@;["margin-bottom;iK;	@;
 [ 
