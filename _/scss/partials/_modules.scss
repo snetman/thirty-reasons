@@ -433,6 +433,26 @@ a.btn-tall {
   }
 }
 
+.poster-thumb-blank-dark {
+  @extend .poster-thumb-blank;
+  .image {
+    img {
+      background-color: $sdk-gray;
+      border: 1px dotted $vdk-gray;
+    }
+  }
+  .caption {
+    border-bottom-color: $sdk-gray;
+    .date {
+      color: $dk-gray;
+    }
+  }
+  .reason-number {
+    color: $lt-gray; 
+    b {background-color: $vdk-gray;}
+  }  
+}
+
 /* Poster grid
 ------------------------- */
 
@@ -506,29 +526,17 @@ a.btn-tall {
       margin-bottom: .65em;
       color: $black;
     }
-    .title + p {
-        text-indent: 0;
-    }
     p {
         font-size: 1em; // 14/14
-        text-indent: 1.5em; // 18/14
         line-height: 1.285em;
-        margin-bottom: 2.5714em; // 36/14
+        margin-bottom: .65em;
         color: $vdk-gray;
-    }
-    p + p {
-        margin-top: -2.5714em;
-    }
-    .signoff {
-        padding-top: .65em;
-        text-indent: 0;
-        color: $dk-gray;
     }
     .share {
         font-size: .85714em; // 12/14
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 1.285em 0 0 0;
         li {
             display: inline-block;
             margin-bottom: 0;

@@ -1,9 +1,12 @@
 /*
-	30 Reasons :: style.scss
+	30 Reasons :: style.css
 	----------------------------------------------------------
 	By Adam Snetman
-		
--------------------------------------------------------------------------------*/
+	Based on HTML5 Reset by Tim Murtaugh
+	
+ *= require_self
+ *= require_tree .
+*/
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
@@ -922,14 +925,14 @@ a.btn-tall {
 
 /* Posters
 -------------------------------------------------- */
-.poster, .poster-thumb, .poster-thumb-dark, .poster-thumb-blank {
+.poster, .poster-thumb, .poster-thumb-dark, .poster-thumb-blank, .poster-thumb-blank-dark {
   margin: 0;
   padding: 0; }
-  .poster .image, .poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image {
+  .poster .image, .poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image, .poster-thumb-blank-dark .image {
     position: relative;
     margin: 0 auto;
     padding: 0; }
-    .poster .image img, .poster-thumb .image img, .poster-thumb-dark .image img, .poster-thumb-blank .image img {
+    .poster .image img, .poster-thumb .image img, .poster-thumb-dark .image img, .poster-thumb-blank .image img, .poster-thumb-blank-dark .image img {
       display: block;
       position: relative;
       border: 1px solid #e3e3e3;
@@ -938,20 +941,20 @@ a.btn-tall {
       -ms-transition: all 0.15s ease-out;
       -o-transition: all 0.15s ease-out;
       transition: all 0.15s ease-out; }
-  .poster a:hover img, .poster-thumb a:hover img, .poster-thumb-dark a:hover img, .poster-thumb-blank a:hover img {
+  .poster a:hover img, .poster-thumb a:hover img, .poster-thumb-dark a:hover img, .poster-thumb-blank a:hover img, .poster-thumb-blank-dark a:hover img {
     border-color: #4c98dc;
     box-shadow: 0 3px 16px rgba(0, 0, 0, 0.3); }
 
 /* Thumbnails
 ------------------------- */
-.poster-thumb .caption, .poster-thumb-dark .caption, .poster-thumb-blank .caption {
+.poster-thumb .caption, .poster-thumb-dark .caption, .poster-thumb-blank .caption, .poster-thumb-blank-dark .caption {
   font-size: .875em;
   font-weight: 500;
   line-height: 1.14285em;
   padding: .75em 0;
   border-bottom: 2px solid #dddddd;
   height: 2.3em; }
-  .poster-thumb .caption .date, .poster-thumb-dark .caption .date, .poster-thumb-blank .caption .date {
+  .poster-thumb .caption .date, .poster-thumb-dark .caption .date, .poster-thumb-blank .caption .date, .poster-thumb-blank-dark .caption .date {
     display: block;
     color: #888888;
     -webkit-transition: color 0.2s linear;
@@ -959,11 +962,11 @@ a.btn-tall {
     -ms-transition: color 0.2s linear;
     -o-transition: color 0.2s linear;
     transition: color 0.2s linear; }
-.poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image {
+.poster-thumb .image, .poster-thumb-dark .image, .poster-thumb-blank .image, .poster-thumb-blank-dark .image {
   max-width: 280px;
   margin-left: auto;
   margin-right: auto; }
-.poster-thumb a:hover, .poster-thumb-dark a:hover, .poster-thumb-blank a:hover, .poster-thumb a:hover .date, .poster-thumb-dark a:hover .date, .poster-thumb-blank a:hover .date {
+.poster-thumb a:hover, .poster-thumb-dark a:hover, .poster-thumb-blank a:hover, .poster-thumb-blank-dark a:hover, .poster-thumb a:hover .date, .poster-thumb-dark a:hover .date, .poster-thumb-blank a:hover .date, .poster-thumb-blank-dark a:hover .date {
   color: #262626; }
 
 .poster-thumb-dark .caption {
@@ -977,12 +980,12 @@ a.btn-tall {
 
 /* Blanks
 ------------------------- */
-.poster-thumb-blank .image img {
+.poster-thumb-blank .image img, .poster-thumb-blank-dark .image img {
   background-color: #dddddd;
   border: 1px dotted #a6a6a6; }
-.poster-thumb-blank .caption {
+.poster-thumb-blank .caption, .poster-thumb-blank-dark .caption {
   color: #888888; }
-.poster-thumb-blank .reason-number {
+.poster-thumb-blank .reason-number, .poster-thumb-blank-dark .reason-number {
   font-size: 2em;
   position: absolute;
   top: 50%;
@@ -990,8 +993,20 @@ a.btn-tall {
   margin-left: -1em;
   margin-top: -0.6em;
   z-index: 2; }
-  .poster-thumb-blank .reason-number b {
+  .poster-thumb-blank .reason-number b, .poster-thumb-blank-dark .reason-number b {
     background-color: #888888; }
+
+.poster-thumb-blank-dark .image img {
+  background-color: #333333;
+  border: 1px dotted #555555; }
+.poster-thumb-blank-dark .caption {
+  border-bottom-color: #333333; }
+  .poster-thumb-blank-dark .caption .date {
+    color: #888888; }
+.poster-thumb-blank-dark .reason-number {
+  color: #dddddd; }
+  .poster-thumb-blank-dark .reason-number b {
+    background-color: #555555; }
 
 /* Poster grid
 ------------------------- */
@@ -1085,25 +1100,16 @@ a.btn-tall {
     line-height: 1.285em;
     margin-bottom: .65em;
     color: #262626; }
-  .tombstone .title + p {
-    text-indent: 0; }
   .tombstone p {
     font-size: 1em;
-    text-indent: 1.5em;
     line-height: 1.285em;
-    margin-bottom: 2.5714em;
+    margin-bottom: .65em;
     color: #555555; }
-  .tombstone p + p {
-    margin-top: -2.571em; }
-  .tombstone .signoff {
-    padding-top: .65em;
-    text-indent: 0;
-    color: #888888; }
   .tombstone .share {
     font-size: .85714em;
     list-style: none;
     margin: 0;
-    padding: 0; }
+    padding: 1.285em 0 0 0; }
     .tombstone .share li {
       display: inline-block;
       margin-bottom: 0; }

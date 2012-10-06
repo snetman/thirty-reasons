@@ -1,8 +1,11 @@
 /*
-	30 Reasons :: style.scss
+	30 Reasons :: style.css
 	----------------------------------------------------------
 	By Adam Snetman
-		
--------------------------------------------------------------------------------*/
+	Based on HTML5 Reset by Tim Murtaugh
+	
+ *= require_self
+ *= require_tree .
+*/
 
-@import "partials/_mixins", "partials/_reset", "partials/_colors", "partials/_base", "partials/_forms", "partials/_grid", "partials/_layout", "partials/_modules";
+@import "partials/_mixins", "partials/_reset", "partials/_colors", "partials/_base", "partials/_forms", "partials/_grid", "partials/_layout", "partials/_modules", "partials/_ss-social.css", "partials/_ss-standard.css";
